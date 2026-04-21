@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content .= "Service: $service\n\n";
     $email_content .= "Message:\n$message\n";
     
-    $email_headers = "From: Swift Home Fix <noreply@yourdomain.com>";
+    $email_headers = "From: Swift Home Fix <noreply@technicalstars.online>";
     
     if (mail($recipient, $subject, $email_content, $email_headers)) {
         echo json_encode(["success" => true]);
