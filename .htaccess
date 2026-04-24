@@ -1,5 +1,6 @@
 # Redirect old single-page to new homepage
 Options -Indexes
+DirectoryIndex index.html index.php
 
 # Force HTTPS
 RewriteEngine On
