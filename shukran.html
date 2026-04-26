@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head> 
+<head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,7 +11,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/logo.png">
     <title>شكراً لك - Swift Home Fix</title>
     <meta name="description" content="تم استلام طلبك بنجاح. سيقوم فريقنا بالتواصل معك قريباً لخدمة التكييف والسباكة والكهرباء.">
 
@@ -20,6 +19,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ✅ ADDED: FAVICON -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
 
     <!-- Google Ads Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17531237862"></script>
@@ -235,9 +237,18 @@
             box-shadow: 0 8px 30px rgba(37,211,102,0.4);
         }
 
-        /* FOOTER (Same as original) */
-        footer { background: #001A3A; color: rgba(255,255,255,0.7); padding: 80px 5% 30px; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
+        /* FOOTER */
+        footer { 
+            background: #001A3A; 
+            color: rgba(255,255,255,0.7); 
+            padding: 80px 5% 30px; 
+        }
+        .footer-grid { 
+            display: grid; 
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr; 
+            gap: 40px; 
+            margin-bottom: 50px; 
+        }
         .footer-col h4 { color: white; font-weight: 700; margin-bottom: 20px; font-size: 1.1rem; }
         .footer-col ul { list-style: none; }
         .footer-col ul li { margin-bottom: 12px; }
@@ -297,8 +308,9 @@
 
     <!-- NAV BAR -->
     <nav id="navbar">
+        <!-- ✅ UPDATED: Using Local Logo -->
         <a href="index.html" class="logo-group">
-            <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Swift Home Fix Logo" class="logo-img">
+            <img src="/images/logo.png" alt="Swift Home Fix Logo" class="logo-img">
             <div class="logo-text">
                 <span class="ar">التكييف والسباكة والكهرباء</span>
                 <span class="en">SWIFT HOME FIX</span>
@@ -309,6 +321,7 @@
             <li><a href="takeyef.html">التكييف</a></li>
             <li><a href="sabaka.html">السباكة</a></li>
             <li><a href="kahraba.html">الكهرباء</a></li>
+            <!-- Link to Contact section on this page if needed, or Home -->
             <li><a href="#contact" class="nav-cta">احجز الآن</a></li>
         </ul>
         <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
@@ -344,6 +357,7 @@
                 <div class="info-icon"><i class="fas fa-clock"></i></div>
                 <div class="info-text">
                     <span class="info-label">وقت الاستجابة</span>
+                    <!-- ✅ RTL FIX for Arabic text mixed with numbers -->
                     <span class="info-value" style="direction: rtl;">أقل من 60 دقيقة</span>
                 </div>
             </div>
@@ -363,13 +377,14 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Logo" class="footer-logo">
+                <!-- ✅ UPDATED: Using Local Logo -->
+                <img src="/images/logo.png" alt="Logo" class="footer-logo">
                 <p style="opacity:0.8; font-size:0.95rem; line-height:1.8;">شريكك الموثوق لجميع الخدمات المنزلية في الرياض. نقدم خدمات احترافية بأعلى معايير الجودة.</p>
                 <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://wa.me/966551895625"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/966551895625" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -420,7 +435,7 @@
     <!-- Google Ads Conversion Tracking -->
     <script>
       gtag('event', 'conversion', {
-        'send_to': 'AW-17531237862/YOUR_CONVERSION_LABEL',
+        'send_to': 'AW-17531237862/submit_form',
         'value': 1.0,
         'currency': 'SAR'
       });

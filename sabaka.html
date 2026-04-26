@@ -11,7 +11,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/logo.png">
     <title>سباكة الرياض - كشف تسربات وتسليك مجاري | Swift Home Fix</title>
     <meta name="description" content="خدمة سباكة احترافية في الرياض: كشف تسربات بالكاميرا الحرارية، تسليك مجاري، تركيب سخانات. فنيون مرخصون، ضمان مكتوب.">
     <meta name="keywords" content="سباكة الرياض، كشف تسربات، تسليك مجاري، فني سباكة، تركيب سخان، مواسير">
@@ -31,6 +30,17 @@
       gtag('js', new Date());
       gtag('config', 'AW-17531237862');
     </script>
+
+    <!-- ✅ ADDED: FAVICON (Using your logo.png) -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- ✅ Open Graph (Updated to use local image) -->
+    <meta property="og:title" content="سباكة الرياض - كشف تسربات وتسليك مجاري - Swift Home Fix">
+    <meta property="og:description" content="خدمة سباكة احترافية في الرياض: كشف تسربات بالكاميرا الحرارية، تسليك مجاري، تركيب سخانات. فنيون مرخصون، ضمان مكتوب.">
+    <meta property="og:image" content="/images/service-plumbing.jpg">
+    <meta property="og:url" content="https://technicalstars.online/sabaka.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
 
     <style>
         :root {
@@ -148,6 +158,7 @@
         }
         .hero-bg {
             position: absolute; inset: 0;
+            /* ✅ UPDATED: Using Local Service Image */
             background: url('/images/service-plumbing.jpg') center/cover no-repeat;
             z-index: 1;
         }
@@ -235,13 +246,13 @@
             width: 60px; height: 60px; border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
             font-size: 1.4rem; margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #E0F2FE, #BAE6FD); color: #0369A1;
+            box-shadow: 0 4px 12px rgba(3, 105, 161, 0.15);
         }
         /* Icon Colors */
-        .icon-blue { background: linear-gradient(135deg, #E0F2FE, #BAE6FD); color: #0369A1; }
-        .icon-water { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); color: #047857; }
-        .icon-orange { background: linear-gradient(135deg, #FCE7F3, #FBCFE8); color: #BE185D; }
-        .icon-purple { background: linear-gradient(135deg, #FEF3C7, #FDE68A); color: #B45309; }
+        .service-card:nth-child(2) .service-icon { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); color: #047857; }
+        .service-card:nth-child(3) .service-icon { background: linear-gradient(135deg, #FCE7F3, #FBCFE8); color: #BE185D; }
+        .service-card:nth-child(4) .service-icon { background: linear-gradient(135deg, #FEF3C7, #FDE68A); color: #B45309; }
 
         .service-card h3 { font-size: 1.4rem; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
         .service-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; line-height: 1.6; }
@@ -452,7 +463,8 @@
     <!-- SECTION 2: NAV BAR -->
     <nav id="navbar">
         <a href="index.html" class="logo-group">
-            <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Swift Home Fix Logo" class="logo-img">
+            <!-- ✅ UPDATED: Using Local Logo -->
+            <img src="/images/logo.png" alt="Swift Home Fix Logo" class="logo-img">
             <div class="logo-text">
                 <span class="ar">التكييف والسباكة والكهرباء</span>
                 <span class="en">SWIFT HOME FIX</span>
@@ -474,7 +486,7 @@
         <canvas class="hero-canvas" id="heroCanvas"></canvas>
         <div class="hero-content">
             <div class="hero-badge"><span class="dot"></span> فنيو السباكة جاهزون الآن</div>
-            <h1>كشف وإصلاح التسربات في الرياض<br><span>بضمان كتابي شامل ✓</span></h1>
+            <h1>كشف وإصلاح التسربات في الرياض<br><span style="color: #FF8A3D">بضمان كتابي شامل ✓</span></h1>
             <p class="hero-desc">خدمة سباكة احترافية — كشف تسربات بالتكنولوجيا الحديثة، تسليك مجاري، تركيب سخانات وخلاطات. نصل إليك خلال 60 دقيقة.</p>
             <div class="hero-btns">
                 <a href="tel:+966551895625" class="btn btn-primary"><i class="fas fa-phone-alt"></i> اتصل الآن</a>
@@ -499,7 +511,7 @@
         <div class="services-grid stagger-grid">
             <!-- Card 1 -->
             <div class="service-card reveal">
-                <div class="service-icon icon-blue"><i class="fas fa-magnifying-glass"></i></div>
+                <div class="service-icon"><i class="fas fa-magnifying-glass"></i></div>
                 <h3>كشف التسربات بالأجهزة الحديثة</h3>
                 <p>نكتشف تسربات المياه المخفية في الجدران والأسقف والأرضيات بدون تكسير باستخدام كاميرات حرارية وأجهزة فحص صوتي.</p>
                 <ul class="service-list">
@@ -512,7 +524,7 @@
             </div>
             <!-- Card 2 -->
             <div class="service-card reveal">
-                <div class="service-icon icon-water"><i class="fas fa-water"></i></div>
+                <div class="service-icon"><i class="fas fa-water"></i></div>
                 <h3>تسليك المجاري والأنابيب</h3>
                 <p>إزالة أي انسداد في مجاري الحمام، المطبخ، والصرف الصحي بأحدث أجهزة التسليك الضغط العالي.</p>
                 <ul class="service-list">
@@ -525,7 +537,7 @@
             </div>
             <!-- Card 3 -->
             <div class="service-card reveal">
-                <div class="service-icon icon-orange"><i class="fas fa-faucet-drip"></i></div>
+                <div class="service-icon"><i class="fas fa-faucet-drip"></i></div>
                 <h3>تركيب وصيانة الأجهزة الصحية</h3>
                 <p>تركيب وإصلاح جميع الأجهزة الصحية: سخانات، خلاطات، طواليت، أحواض ومزيد.</p>
                 <ul class="service-list">
@@ -538,14 +550,14 @@
             </div>
             <!-- Card 4 -->
             <div class="service-card reveal">
-                <div class="service-icon icon-purple"><i class="fas fa-pipe-section"></i></div>
+                <div class="service-icon"><i class="fas fa-pipe-section"></i></div>
                 <h3>تمديدات مواسير الشرب والصرف</h3>
                 <p>تركيب وإصلاح شبكات مواسير المياه النظيفة والصرف الصحي في المنازل والمكاتب.</p>
                 <ul class="service-list">
                     <li><i class="fas fa-check"></i> مواسير PPR عالية الجودة</li>
                     <li><i class="fas fa-check"></i> شبكات مياه شرب</li>
                     <li><i class="fas fa-check"></i> شبكات صرف صحي</li>
-                    <li><i class="fas fa-check"></i> مقاومة الضغط العالي</li>
+                    <li><i class="fas fa-check"></i> مقاومة للضغط العالي</li>
                     <li><i class="fas fa-check"></i> ضمان 5 سنوات</li>
                 </ul>
             </div>
@@ -592,7 +604,7 @@
             <div class="process-line"></div>
             <div class="step">
                 <div class="step-circle"><i class="fas fa-phone-volume"></i></div>
-                <h4>اتصل بنا فوراً</h4>
+                <h4>اتصل فوراً</h4>
                 <p>تواصل معنا في أي وقت</p>
             </div>
             <div class="step">
@@ -622,7 +634,7 @@
         <div class="testimonials-grid stagger-grid">
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-right t-icon"></i>
-                <p class="t-text">"كان عندي تسريب مخفي في سقف الغرفة أضاع علي أشهر. وجدوه في نصف ساعة بالكاميرا الحرارية وأصلحوه نفس اليوم!"</p>
+                <p class="t-text">"كان عندي تسريب مخفي في سقف الغرفة أضاع لي أشهر. وجدوه في نصف ساعة بالكاميرا الحرارية وأصلحوه نفس اليوم!"</p>
                 <div class="t-author">أحمد العتيبي</div>
                 <div class="t-role">حي الملقا</div>
             </div>
@@ -634,7 +646,7 @@
             </div>
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-right t-icon"></i>
-                <p class="t-text">"ركّبوا سخان جديد وغيّروا جميع الخلاطات القديمة. عمل نظيف وأسعار معقولة جداً."</p>
+                <p class="t-text">"ركّبوا سخان جديد وغيّروا جميع الخلاطات القديمة. عمل نظيف وأنيق وبسعر معقول."</p>
                 <div class="t-author">عمر الحربي</div>
                 <div class="t-role">حي النرجس</div>
             </div>
@@ -649,7 +661,8 @@
         </div>
         <div class="contact-wrapper reveal">
             <div class="contact-info-side">
-                <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Logo" class="contact-logo">
+                <!-- ✅ UPDATED: Using Local Logo -->
+                <img src="/images/logo.png" alt="Logo" class="contact-logo">
                 <h3>فريقنا جاهز على مدار الساعة</h3>
                 <p>لا تتردد، نحن هنا لحل مشكلتك بأسرع وقت ممكن وبأعلى معايير الجودة.</p>
                 <div class="info-row"><i class="fas fa-phone-alt"></i> +966 55 189 5625</div>
@@ -704,7 +717,8 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Logo" class="footer-logo">
+                <!-- ✅ UPDATED: Using Local Logo -->
+                <img src="/images/logo.png" alt="Logo" class="footer-logo">
                 <p style="opacity:0.8; font-size:0.95rem; line-height:1.8;">شريكك الموثوق لجميع الخدمات المنزلية في الرياض. نقدم خدمات احترافية بأعلى معايير الجودة.</p>
                 <div class="footer-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -852,7 +866,7 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255,255,255,0.5)';
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
                 ctx.fill();
             }
         }
@@ -895,7 +909,7 @@
         resizeCanvas(); animate();
 
         // --- 5. Form Handler ---
-        const form = document.getElementById('contactForm');
+       const form = document.getElementById('contactForm');
 const toast = document.getElementById('toast');
 
 form.addEventListener('submit', async (e) => {
@@ -918,7 +932,7 @@ form.addEventListener('submit', async (e) => {
     };
 
     try {
-        // 3. Send data to the PHP file
+        // 3. Send data to PHP file
         const response = await fetch('api/contact.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

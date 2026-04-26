@@ -11,7 +11,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/logo.png">
     <title>صيانة تركيب التكييف في الرياض - خلال 60 دقيقة | Swift Home Fix</title>
     <meta name="description" content="خدمة تكييف احترافية في الرياض: تركيب، غسيل، تعبئة غاز، وإصلاح أعطال. فنيون مرخصون، ضمان مكتوب، وصول خلال 60 دقيقة.">
     <meta name="keywords" content="تكييف الرياض، صيانة مكيف، تركيب مكيف، غسيل مكيفات، تعبئة غاز، فني تكييف">
@@ -31,6 +30,17 @@
       gtag('js', new Date());
       gtag('config', 'AW-17531237862');
     </script>
+
+    <!-- ✅ ADDED: FAVICON (Using your logo.png) -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- ✅ Open Graph (Updated to use local image) -->
+    <meta property="og:title" content="صيانة وتركيب التكييف - Swift Home Fix">
+    <meta property="og:description" content="خدمة تكييف احترافية في الرياض: تركيب، غسيل، تعبئة غاز، وإصلاح أعطال. فنيون مرخصون، ضمان مكتوب، وصول خلال 60 دقيقة.">
+    <meta property="og:image" content="/images/hero-ac.jpg">
+    <meta property="og:url" content="https://technicalstars.online/takeyef.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
 
     <style>
         :root {
@@ -176,6 +186,7 @@
             line-height: 1.3; margin-bottom: 20px;
             animation: fadeSlideDown 0.8s ease-out 0.15s both;
         }
+        .hero h1 span { color: var(--secondary-light); }
         .hero-desc {
             font-size: 1.15rem; opacity: 0.9; margin-bottom: 36px;
             max-width: 600px; animation: fadeSlideDown 0.8s ease-out 0.3s both;
@@ -409,8 +420,7 @@
             .nav-links {
                 display: none; position: absolute; top: 80px; right: 0; left: 0;
                 background: white; flex-direction: column; padding: 20px 5%;
-                box-shadow: var(--shadow-lg); border-top: 1px solid var(--border);
-                gap: 5px;
+                box-shadow: var(--shadow-lg); border-top: 1px solid var(--border); gap: 5px;
             }
             .nav-links.open { display: flex; }
             .mobile-toggle { display: block; }
@@ -451,7 +461,8 @@
     <!-- SECTION 2: NAV BAR -->
     <nav id="navbar">
         <a href="index.html" class="logo-group">
-          <img src="images/logo.png">
+            <!-- ✅ UPDATED: Using Local Logo -->
+            <img src="/images/logo.png" alt="Swift Home Fix Logo" class="logo-img">
             <div class="logo-text">
                 <span class="ar">التكييف والسباكة والكهرباء</span>
                 <span class="en">SWIFT HOME FIX</span>
@@ -648,7 +659,8 @@
         </div>
         <div class="contact-wrapper reveal">
             <div class="contact-info-side">
-                <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Logo" class="contact-logo">
+                <!-- ✅ UPDATED: Using Local Logo -->
+                <img src="/images/logo.png" alt="Logo" class="contact-logo">
                 <h3>فريقنا جاهز على مدار الساعة</h3>
                 <p>لا تتردد، نحن هنا لحل مشاكلك بأسرع وقت ممكن وبأعلى معايير الجودة.</p>
                 <div class="info-row"><i class="fas fa-phone-alt"></i> +966 55 189 5625</div>
@@ -702,7 +714,8 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Logo" class="footer-logo">
+                <!-- ✅ UPDATED: Using Local Logo -->
+                <img src="/images/logo.png" alt="Logo" class="footer-logo">
                 <p style="opacity:0.8; font-size:0.95rem; line-height:1.8;">شريكك الموثوق لجميع الخدمات المنزلية في الرياض. نقدم خدمات احترافية بأعلى معايير الجودة.</p>
                 <div class="footer-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -791,7 +804,7 @@
                     const duration = 2000;
                     const start = performance.now();
                     const tick = (now) => {
-                        const progress = Math.min((now - start) / duration, 1);
+                        const progress = Math.min((now - start) / duration,1);
                         const ease = 1 - Math.pow(1 - progress, 3);
                         el.textContent = Math.floor(ease * target).toLocaleString('en-US');
                         if (progress < 1) requestAnimationFrame(tick);
@@ -916,7 +929,7 @@ form.addEventListener('submit', async (e) => {
     };
 
     try {
-        // 3. Send data to the PHP file
+        // 3. Send data to PHP file
         const response = await fetch('api/contact.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

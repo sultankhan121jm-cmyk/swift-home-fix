@@ -11,7 +11,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/logo.png">
     <title>فني كهرباء في الرياض - إصلاح ماس وتركيب لوحات | Swift Home Fix</title>
     <meta name="description" content="خدمة كهربائية احترافية في الرياض: إصلاح ماس، تركيب لوحات توزيع، تمديد أسلاك وإضاءة LED. فنيون معتمدون، ضمان مكتوب.">
     <meta name="keywords" content="كهرباء الرياض، فني كهرباء، إصلاح ماس، لوحة توزيع، تمديد أسلاك، إضاءة LED">
@@ -31,6 +30,17 @@
       gtag('js', new Date());
       gtag('config', 'AW-17531237862');
     </script>
+
+    <!-- ✅ ADDED: FAVICON (Using your logo.png) -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- ✅ Open Graph (Updated to use local image) -->
+    <meta property="og:title" content="خدمات منزلية احترافية - Swift Home Fix">
+    <meta property="og:description" content="خدمة كهربائية احترافية في الرياض. فنيون مرخصون ذو خبرة عالية مع ضمان شامل ووصول خلال 60 دقيقة.">
+    <meta property="og:image" content="/images/service-electric.jpg">
+    <meta property="og:url" content="https://technicalstars.online/kahraba.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
 
     <style>
         :root {
@@ -148,6 +158,7 @@
         }
         .hero-bg {
             position: absolute; inset: 0;
+            /* ✅ UPDATED: Using Local Service Image */
             background: url('/images/service-electric.jpg') center/cover no-repeat;
             z-index: 1;
         }
@@ -235,13 +246,13 @@
             width: 60px; height: 60px; border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
             font-size: 1.4rem; margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A); color: #B45309;
+            box-shadow: 0 4px 12px rgba(180, 83, 9, 0.15);
         }
-        /* Icon Colors from prompt */
-        .icon-yellow { background: linear-gradient(135deg, #FEF3C7, #FBCFE8); color: #B45309; }
-        .icon-blue { background: linear-gradient(135deg, #E0F2FE, #BAE6FD); color: #0369A1; }
-        .icon-green { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); color: #047857; }
-        .icon-purple { background: linear-gradient(135deg, #F3E8FF, #E9D5FF); color: #7E22CE; }
+        /* Icon Colors from original */
+        .service-card:nth-child(2) .service-icon { background: linear-gradient(135deg, #E0F2FE, #BAE6FD); color: #0369A1; }
+        .service-card:nth-child(3) .service-icon { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); color: #047857; }
+        .service-card:nth-child(4) .service-icon { background: linear-gradient(135deg, #F3E8FF, #E9D5FF); color: #7E22CE; }
 
         .service-card h3 { font-size: 1.4rem; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
         .service-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; line-height: 1.6; }
@@ -452,7 +463,8 @@
     <!-- SECTION 2: NAV BAR -->
     <nav id="navbar">
         <a href="index.html" class="logo-group">
-            <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Swift Home Fix Logo" class="logo-img">
+            <!-- ✅ UPDATED: Using Local Logo -->
+            <img src="/images/logo.png" alt="Swift Home Fix Logo" class="logo-img">
             <div class="logo-text">
                 <span class="ar">التكييف والسباكة والكهرباء</span>
                 <span class="en">SWIFT HOME FIX</span>
@@ -499,7 +511,7 @@
         <div class="services-grid stagger-grid">
             <!-- Card 1 -->
             <div class="service-card reveal">
-                <div class="service-icon icon-yellow"><i class="fas fa-bolt"></i></div>
+                <div class="service-icon"><i class="fas fa-bolt"></i></div>
                 <h3>إصلاح الأعطال الكهربائية</h3>
                 <p>تشخيص دقيق وسريع لجميع المشاكل الكهربائية: ماس، قواطع متكررة، وبرودة مقابس. إصلاح فوري بمعدات احترافية.</p>
                 <ul class="service-list">
@@ -512,7 +524,7 @@
             </div>
             <!-- Card 2 -->
             <div class="service-card reveal">
-                <div class="service-icon icon-blue"><i class="fas fa-th-large"></i></div>
+                <div class="service-icon"><i class="fas fa-th-large"></i></div>
                 <h3>تركيب وتغيير لوحات التوزيع</h3>
                 <p>تركيب وترقية لوحات التوزيع الكهربائية بقواطع معتمدة تحمي منزلك من التلف والحرائق.</p>
                 <ul class="service-list">
@@ -525,7 +537,7 @@
             </div>
             <!-- Card 3 -->
             <div class="service-card reveal">
-                <div class="service-icon icon-green"><i class="fas fa-network-wired"></i></div>
+                <div class="service-icon"><i class="fas fa-network-wired"></i></div>
                 <h3>تمديد وتوصيل الأسلاك الكهربائية</h3>
                 <p>تمديد شبكات الكهرباء الداخلية والخارجية باستخدام كابلات معتمدة وفق كود البناء السعودي.</p>
                 <ul class="service-list">
@@ -538,7 +550,7 @@
             </div>
             <!-- Card 4 -->
             <div class="service-card reveal">
-                <div class="service-icon icon-purple"><i class="fas fa-lightbulb"></i></div>
+                <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
                 <h3>الإضاءة LED وأنظمة الحماية</h3>
                 <p>تركيب إضاءة LED موفرة للطاقة وأنظمة حماية من الصواعق والتلف الكهربائي.</p>
                 <ul class="service-list">
@@ -622,7 +634,7 @@
         <div class="testimonials-grid stagger-grid">
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-right t-icon"></i>
-                <p class="t-text">"كان عندي ماس متكرر في غرفة النوم. الفني شخّص المشكلة بسرعة ووجد السلك المحترق في الجدار وأصلحه. ممتاز!"</p>
+                <p class="t-text">"كان عندي ماس متكرر في غرفة النوم. الفني شخّص المشكلة في 10 دقائق ووجد السلك المحترق في الجدار وأصلحه نفس اليوم!"</p>
                 <div class="t-author">تركي المالكي</div>
                 <div class="t-role">حي العليا</div>
             </div>
@@ -649,7 +661,8 @@
         </div>
         <div class="contact-wrapper reveal">
             <div class="contact-info-side">
-                <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Logo" class="contact-logo">
+                <!-- ✅ UPDATED: Using Local Logo -->
+                <img src="/images/logo.png" alt="Logo" class="contact-logo">
                 <h3>فريقنا جاهز على مدار الساعة</h3>
                 <p>لا تتردد، نحن هنا لحل مشكلتك بأسرع وقت ممكن وبأعلى معايير الجودة.</p>
                 <div class="info-row"><i class="fas fa-phone-alt"></i> +966 55 189 5625</div>
@@ -659,24 +672,25 @@
             </div>
             <div class="contact-form-side">
                 <h3>أرسل طلبك</h3>
+                <!-- ✅ Added ID attributes to inputs for cleaner JS selection -->
                 <form id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label>الاسم الأول</label>
-                            <input type="text" class="form-control" placeholder="عبدالله" required>
+                            <input type="text" id="fname" class="form-control" placeholder="عبدالله" required>
                         </div>
                         <div class="form-group">
                             <label>الاسم الأخير</label>
-                            <input type="text" class="form-control" placeholder="الشمري">
+                            <input type="text" id="lname" class="form-control" placeholder="الشمري">
                         </div>
                     </div>
                     <div class="form-group">
                         <label>رقم الهاتف</label>
-                        <input type="tel" class="form-control" placeholder="05XXXXXXXX" dir="ltr" required>
+                        <input type="tel" id="phone" class="form-control" placeholder="05XXXXXXXX" dir="ltr" required>
                     </div>
                     <div class="form-group">
                         <label>نوع مشكلة الكهرباء</label>
-                        <select class="form-control" required>
+                        <select id="service" class="form-control" required>
                             <option value="" disabled selected>اختر الخدمة</option>
                             <option value="short">إصلاح ماس</option>
                             <option value="panel">لوحة توزيع</option>
@@ -687,11 +701,11 @@
                     </div>
                     <div class="form-group">
                         <label>العنوان</label>
-                        <input type="text" class="form-control" placeholder="الحي، الشارع...">
+                        <input type="text" id="address" class="form-control" placeholder="الحي، الشارع...">
                     </div>
                     <div class="form-group">
                         <label>صف مشكلتك أو طلبك</label>
-                        <textarea class="form-control" rows="4" placeholder="اكتب تفاصيل الطلب هنا..."></textarea>
+                        <textarea id="message" class="form-control" rows="4" placeholder="اكتب تفاصيل الطلب هنا..."></textarea>
                     </div>
                     <button type="submit" class="btn-submit">احجز الآن — فني كهرباء خلال 60 دقيقة</button>
                 </form>
@@ -703,7 +717,8 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="Logo" class="footer-logo">
+                <!-- ✅ UPDATED: Using Local Logo -->
+                <img src="/images/logo.png" alt="Logo" class="footer-logo">
                 <p style="opacity:0.8; font-size:0.95rem; line-height:1.8;">شريكك الموثوق لجميع الخدمات المنزلية في الرياض. نقدم خدمات احترافية بأعلى معايير الجودة.</p>
                 <div class="footer-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -727,7 +742,7 @@
                     <li><a href="#">إصلاح أعطال</a></li>
                     <li><a href="#">لوحات توزيع</a></li>
                     <li><a href="#">تمديد أسلاك</a></li>
-                    <li><a href="#">إضاءة LED</a></li>
+                    <li><a href="#">إضاءة</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -851,7 +866,7 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255,255,255,0.5)';
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
                 ctx.fill();
             }
         }
@@ -894,7 +909,7 @@
         resizeCanvas(); animate();
 
         // --- 5. Form Handler ---
-        const form = document.getElementById('contactForm');
+       const form = document.getElementById('contactForm');
 const toast = document.getElementById('toast');
 
 form.addEventListener('submit', async (e) => {
@@ -909,15 +924,15 @@ form.addEventListener('submit', async (e) => {
 
     // 2. Prepare data to send
     const formData = {
-        name: form.querySelector('input[placeholder*="عبدالله"]').value + ' ' + form.querySelector('input[placeholder="الشمري"]').value,
-        phone: form.querySelector('input[type="tel"]').value,
-        service: form.querySelector('select').value,
-        address: form.querySelector('input[placeholder="الحي"]').value,
-        message: form.querySelector('textarea').value
+        name: document.getElementById('fname').value + ' ' + document.getElementById('lname').value,
+        phone: document.getElementById('phone').value,
+        service: document.getElementById('service').value,
+        address: document.getElementById('address').value,
+        message: document.getElementById('message').value
     };
 
     try {
-        // 3. Send data to the PHP file
+        // 3. Send data to PHP file
         const response = await fetch('api/contact.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

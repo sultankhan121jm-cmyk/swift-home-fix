@@ -1,22 +1,58 @@
-# 1. Prevent directory browsing
-Options -Indexes
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Force HTTPS (Redirects http to https)
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
 
-# 2. Set the default home page (Index must be first)
-DirectoryIndex index.html index.php
+# 1. FIX: Set Default Index Page
+# This ensures 'index.html' is loaded first, preventing redirect to 'takeyef.html'
+DirectoryIndex index.html index.php index.htm
 
-# 3. Force HTTPS for security
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# 2. SECURITY: Block Hidden Files
+# Prevents users from viewing sensitive system files
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
 
-# 4. Fix for the home page issue
-# If someone visits the root, ensure index.html is served
-RewriteRule ^$ index.html [L]
+# 3. SECURITY: Headers (CORS Support)
+# Helps your api/contact.php work correctly without errors
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "https://technicalstars.online"
+  Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+  Header set Access-Control-Allow-Headers "Content-Type"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
 
-# 5. Clean URLs (Removes .html from the address bar)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+# 4. PERFORMANCE: Gzip Compression
+# Compresses files to make website load faster
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  BrowserMatch ^Mozilla/4 gzip-only-text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+  BrowserMatch ^Mozilla/4\.0\(compatible|[MSIE [6-9]\) !gzip
+  SetEnv gzip-no-text/html 1
+  SetEnv gzip-no-text/plain 1
+  SetEnv gzip-no-text/xml 1
+  SetEnv gzip-no-text/css 1
+  SetEnv gzip-no-text/javascript 1
+  SetEnv gzip-no-text/application/javascript 1
+  SetEnv gzip-no-text/application/json 1
+  SetEnv gzip-no-text/image/svg+xml 1
+  Header set Vary User-Agent
+</IfModule>
 
-# 6. Custom 404 Error Page
-ErrorDocument 404 /index.html
+# 5. PERFORMANCE: Browser Caching
+# Stores files in user browser for faster loading on next visits
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+</IfModule>

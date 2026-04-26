@@ -11,17 +11,19 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/logo.png">
     <title>خدمات منزلية احترافية في الرياض | Swift Home Fix</title>
     <meta name="description" content="خدمات تكييف، سباكة، وكهرباء احترافية في الرياض. فنيون مرخصون ذو خبرة عالية مع ضمان شامل ووصول خلال 60 دقيقة.">
     <meta name="keywords" content="سباكة الرياض، كهرباء الرياض، تكييف الرياض، صيانة منزلية، فني سباكة، كشف تسربات">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://technicalstars.online/index.html">
 
-    <!-- ✅ Open Graph -->
+    <!-- ✅ ADDED: FAVICON (Using your logo.png) -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- ✅ Open Graph (Updated to use local image) -->
     <meta property="og:title" content="خدمات منزلية احترافية - Swift Home Fix">
     <meta property="og:description" content="خدمة منزلية احترافية في الرياض. فنيون مرخصون ذو خبرة عالية مع ضمان شامل ووصول خلال 60 دقيقة.">
-    <meta property="og:image" content="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50">
+    <meta property="og:image" content="/images/hero-ac.jpg">
     <meta property="og:url" content="https://technicalstars.online/index.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
@@ -66,9 +68,9 @@
             --border: #E2E8F0;
             --whatsapp: #25D366;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-            --shadow-md: 0 4px 14px rgba(0,0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0,0.1);
-            --shadow-xl: 0 20px 50px rgba(0,0,0,0,0.12);
+            --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 50px rgba(0,0,0,0.12);
             --radius: 14px;
             --radius-sm: 8px;
             --ease-out: cubic-bezier(.22,1,.36,1);
@@ -88,7 +90,7 @@
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s var(--ease-out), transform: 0.8s var(--ease-out);
+            transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
             will-change: opacity, transform;
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -112,7 +114,7 @@
         .top-bar .info-item { display: flex; align-items: center; gap: 6px; }
 
         nav {
-            background: rgba(255,255,255,255,0.97);
+            background: rgba(255,255,255,0.97);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 0 5%;
@@ -124,7 +126,7 @@
             position: sticky;
             top: 0;
             z-index: 1001;
-            transition: box-shadow: 0.3s;
+            transition: box-shadow 0.3s;
         }
         nav.scrolled { box-shadow: var(--shadow-md); }
 
@@ -242,7 +244,7 @@
         .service-card:hover::before { height: 100%; }
         .service-card-img {
             width: 100%; height: 210px; object-fit: cover;
-            transition: transform: 0.6s var(--ease-out);
+            transition: transform 0.6s var(--ease-out);
         }
         .service-card:hover .service-card-img { transform: scale(1.05); }
         .service-card-img-wrap { overflow: hidden; position: relative; }
@@ -254,7 +256,7 @@
         .service-icon {
             width: 50px; height: 50px; border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; margin-bottom: 14px; transition: transform: 0.4s;
+            font-size: 1.2rem; margin-bottom: 14px; transition: transform 0.4s;
             position: relative; z-index: 2;
         }
         .service-card:hover .service-icon { transform: scale(1.1) rotate(-3deg); }
@@ -364,7 +366,7 @@
         }
         .contact-detail-text .label { font-size: 0.78rem; opacity: 0.55; }
         .contact-detail-text .value { font-weight: 700; font-size: 0.95rem; }
-        .contact-detail-text a { color: white; text-decoration: none; transition: opacity: 0.3s; }
+        .contact-detail-text a { color: white; text-decoration: none; transition: opacity 0.3s; }
         .contact-detail-text a:hover { opacity: 0.8; }
 
         .contact-form-side { padding: 50px 40px; }
@@ -398,7 +400,7 @@
             position: fixed; top: 90px; left: 50%; transform: translateX(-50%) translateY(-20px);
             background: var(--primary); color: white; padding: 14px 28px;
             border-radius: 50px; font-weight: 700; font-size: 0.95rem;
-            box-shadow: 0 20px 50px rgba(0, 0,0.12);
+            box-shadow: 0 20px 50px rgba(0, 0,0,0.12);
             z-index: 10000; opacity: 0;
             pointer-events: none; transition: all 0.4s var(--ease-out);
             display: flex; align-items: center; gap: 10px;
@@ -421,7 +423,7 @@
         .footer-logo-row { display: flex; align-items: center; gap: 12px; }
         .footer-logo-img { width: 50px; height: 50px; border-radius: 8px; object-fit: contain; }
         .footer-brand .logo-text .ar-name { color: white; }
-        .footer-brand .logo-text .en-name { color: rgba(255,255,255,0.4); }
+        .footer-brand .logo-text .en-name { color: rgba(255,255,255,255,0.4); }
         .footer-brand > p { margin-top: 14px; font-size: 0.9rem; line-height: 1.8; }
         .footer-social { display: flex; gap: 12px; margin-top: 16px; }
         .footer-social a {
@@ -532,7 +534,8 @@
 
     <nav id="navbar">
         <div class="logo-group">
-            <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="شعار Swift Home Fix" class="logo-img" width="48" height="48">
+            <!-- ✅ UPDATED: Using Local Logo -->
+            <img src="/images/logo.png" alt="شعار Swift Home Fix" class="logo-img" width="48" height="48">
             <div class="logo-text">
                 <span class="ar-name">التكييف والسباكة والكهرباء</span>
                 <span class="en-name">SWIFT HOME FIX</span>
@@ -683,7 +686,6 @@
                     <div><div class="author-name">عبدالله الشمري</div><div class="author-role">حي العليا</div>
                 </div>
             </div>
-            </div>
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-right quote-icon"></i>
                 <div class="stars">
@@ -698,7 +700,7 @@
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-right quote-icon"></i>
                 <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i></i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i>></div>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i></i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i>></div>
                 <p>خدمة كهرباء لديهم. الفني وصل في المدة قصيانة بسرعة وكانت تجربته جيدة جداً.</p>
                 <div class="testimonial-author">
                     <div class="author-avatar" style="background: linear-gradient(135deg, #B45309, #F59E0B);س</div>
@@ -717,7 +719,8 @@
         </div>
         <div class="contact-wrapper reveal">
             <div class="contact-info-side">
-                <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="شعار الشركة" class="side-logo" loading="lazy" width="80" height="80">
+                <!-- ✅ UPDATED: Using Local Logo -->
+                <img src="/images/logo.png" alt="شعار الشركة" class="side-logo" loading="lazy" width="80" height="80">
                 <h3>نحن هنا لمساعدك</h3>
                 <p>تواصل معنا بأي طريقة تناسبك. فريقنا جاهز على مدار الساعة.</p>
                 <div class="contact-detail">
@@ -725,10 +728,11 @@
                     <div class="contact-detail-text">
                         <div class="contact-detail-text">
                             <div class="contact-detail-text">
-                                <div class="label">الهاتف</div>
                                 <div class="contact-detail-text">
+                                    <div class="label">الهاتف</div>
                                     <div class="contact-detail-text">
-                                        <div class="value"><a href="tel:+966551895625" dir="ltr">+966 55 189 5625</a></div>
+                                        <div class="contact-detail-text">
+                                            <div class="value"><a href="tel:+966551895625" dir="ltr">+966 55 189 5625</a></div>
                                     </div>
                                 </div>
                                 </div>
@@ -741,25 +745,16 @@
                                 <div class="contact-detail-text">
                                     <div class="contact-detail-text">
                                         <div class="contact-detail-text">
-                                        <div class="contact-detail-text">
                                             <div class="contact-detail-text">
                                                 <div class="contact-detail-text">
                                                     <div class="contact-detail-text">
                                                         <div class="contact-detail-text">
                                                             <div class="contact-detail-text">
                                                                 <div class="contact-detail-text">
-                                                                    <div class="contact-detail-text">
-                                                                        <div class="contact-detail-text">
-                                                                            <div class="contact-detail-text">
-                                                                                <div class="contact-detail-text">
-                                                                                    <div class="contact-detail-text">
-                                                                                        <div class="contact-detail-text">
-                                                                                            <div class="contact-detail-text">
-                                                                                                <div class="contact-detail-text">
-                                                                                                    <div class="contact-detail-text">الموقع: الرياض، المملكة العربية السعودية</div>
-                                                                                                </div>
-                                                                                                </div>
-                                                                                                </div>
+                                                                    <div class="contact-detail-text">الموقع: الرياض، المملكة العربية السعودية</div>
+                                                                </div>
+                                                                </div>
+                                                                </div>
             </div>
             </div>
         </div>
@@ -843,7 +838,8 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo-row">
-                    <img src="https://z-cdn-media.chatglm.cn/files/2c8f965e-4c8e-4ed5-b636-32078c143950.png?auth_key=1876550378-961c21ea7e594091b34b928ffff02aad-0-a7a46b4dcec481ead8e55ed3fa4aaa50" alt="شعار الشركة" class="footer-logo-img" loading="lazy" width="44" height="44">
+                    <!-- ✅ UPDATED: Using Local Logo -->
+                    <img src="/images/logo.png" alt="شعار الشركة" class="footer-logo-img" loading="lazy" width="44" height="44">
                     <div class="logo-text">
                         <span class="ar-name">التكييف والسباكة والكهرباء</span>
                         <span class="en-name">SWIFT HOME FIX</span>

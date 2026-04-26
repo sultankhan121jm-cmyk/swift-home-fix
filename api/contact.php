@@ -1,46 +1,50 @@
 <?php
 // api/contact.php
 
-// Allow JSON to be sent from your HTML pages
+// 1. Set Headers to allow JSON and CORS (Cross-Origin Resource Sharing)
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
 
-// Check if the request is POST
+// 2. Check Request Method
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    http_response_code(405);
+    http_response_code(405); // Method Not Allowed
     echo json_encode(["success" => false, "message" => "Method Not Allowed"]);
     exit;
 }
 
-// Get the raw POST data (JSON)
- $input = json_decode(file_get_contents('php://input'), true);
+// 3. Get the raw POST data (JSON) and decode it
+ $jsonInput = file_get_contents("php://input");
+ $data = json_decode($jsonInput, true);
 
-// Simple validation
-if (!$input) {
-    echo json_encode(["success" => false, "message" => "No Data Received"]);
+// Check if JSON decoding failed
+if ($data === null) {
+    http_response_code(400); // Bad Request
+    echo json_encode(["success" => false, "message" => "Invalid JSON Data"]);
     exit;
 }
 
-// Clean the data (Security)
- $name = strip_tags(trim($input['name'] ?? ''));
- $phone = strip_tags(trim($input['phone'] ?? ''));
- $service = strip_tags(trim($input['service'] ?? ''));
- $address = strip_tags(trim($input['address'] ?? ''));
- $message = strip_tags(trim($input['message'] ?? ''));
+// 4. Clean and Validate Data
+// Using strip_tags to prevent XSS (Cross-Site Scripting)
+ $name  = strip_tags(trim($data['name'] ?? ''));
+ $phone = strip_tags(trim($data['phone'] ?? ''));
+ $service = strip_tags(trim($data['service'] ?? ''));
+ $address = strip_tags(trim($data['address'] ?? ''));
+ $message = strip_tags(trim($data['message'] ?? ''));
 
-// Required fields check
-if (empty($name) || empty($phone)) {
-    echo json_encode(["success" => false, "message" => "Name and Phone are required"]);
+// Check required fields
+if (empty($name) || empty($phone) || empty($service)) {
+    http_response_code(400);
+    echo json_encode(["success" => false, "message" => "Name, Phone, and Service are required"]);
     exit;
 }
 
-// Email Configuration
- $recipient = "qazisultan121jm@gmail.com"; // <--- CHANGE THIS TO YOUR EMAIL
- $subject = "New Service Request: $service";
+// 5. Email Configuration
+ $recipient = "qazisultan121jm@gmail.com"; // <--- REPLACE WITH YOUR EMAIL
+ $subject = "New Service Request: " . ucfirst($service); // e.g., "New Service Request: Ac"
 
-// Email Body
+// Email Body Formatting
  $email_content = "Name: $name\n";
  $email_content .= "Phone: $phone\n";
  $email_content .= "Service Type: $service\n";
@@ -52,12 +56,12 @@ if (empty($name) || empty($phone)) {
  $headers .= "Reply-To: $recipient\r\n";
  $headers .= "X-Mailer: PHP/" . phpversion();
 
-// Send the email
+// 6. Send Email
 if (mail($recipient, $subject, $email_content, $headers)) {
-    // If email sent successfully
+    // 7. Success Response
     echo json_encode(["success" => true]);
 } else {
-    // If email failed
+    // 8. Failure Response
     http_response_code(500);
     echo json_encode(["success" => false, "message" => "Failed to send email"]);
 }
