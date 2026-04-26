@@ -1,16 +1,22 @@
-# Redirect old single-page to new homepage
+# 1. Prevent directory browsing
 Options -Indexes
+
+# 2. Set the default home page (Index must be first)
 DirectoryIndex index.html index.php
 
-# Force HTTPS
+# 3. Force HTTPS for security
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Clean URLs (optional)
+# 4. Fix for the home page issue
+# If someone visits the root, ensure index.html is served
+RewriteRule ^$ index.html [L]
+
+# 5. Clean URLs (Removes .html from the address bar)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-# Custom 404 page
+# 6. Custom 404 Error Page
 ErrorDocument 404 /index.html
