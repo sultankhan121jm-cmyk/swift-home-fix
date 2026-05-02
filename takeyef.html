@@ -16,11 +16,30 @@
     <meta name="keywords" content="تكييف الرياض، صيانة مكيف، تركيب مكيف، غسيل مكيفات، تعبئة غاز، فني تكييف">
     <link rel="canonical" href="https://technicalstars.online/takeyef.html">
 
-    <!-- Fonts & Icons -->
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- ✅ OPEN GRAPH (Using Local Image) -->
+    <meta property="og:title" content="صيانة وتركيب التكييف - Swift Home Fix">
+    <meta property="og:description" content="خدمة تكييف احترافية في الرياض: تركيب، غسيل، تعبئة غاز، وإصلاح أعطال. فنيون مرخصون، ضمان مكتوب، وصول خلال 60 دقيقة.">
+    <meta property="og:image" content="/images/gallery-workers.jpg">
+    <meta property="og:url" content="https://technicalstars.online/takeyef.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+
+    <!-- 🚀 PERFORMANCE: Preconnect & Async Loading (Like index.html) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- 🚀 PRELOAD HERO IMAGE -->
+    <link rel="preload" as="image" fetchpriority="high" href="/images/gallery-workers.jpg">
+
+    <!-- 🚀 Load Fonts & Icons Asynchronously -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
     <!-- Google Ads Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17531237862"></script>
@@ -30,17 +49,6 @@
       gtag('js', new Date());
       gtag('config', 'AW-17531237862');
     </script>
-
-    <!-- ✅ ADDED: FAVICON (Using your logo.png) -->
-    <link rel="icon" type="image/png" href="/images/logo.png">
-
-    <!-- ✅ Open Graph (Updated to use local image) -->
-    <meta property="og:title" content="صيانة وتركيب التكييف - Swift Home Fix">
-    <meta property="og:description" content="خدمة تكييف احترافية في الرياض: تركيب، غسيل، تعبئة غاز، وإصلاح أعطال. فنيون مرخصون، ضمان مكتوب، وصول خلال 60 دقيقة.">
-    <meta property="og:image" content="/images/hero-ac.jpg">
-    <meta property="og:url" content="https://technicalstars.online/takeyef.html">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="ar_SA">
 
     <style>
         :root {
@@ -78,7 +86,6 @@
             overflow-x: hidden;
         }
 
-        /* Animations */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -87,367 +94,188 @@
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* SECTION 1: TOP BAR */
+        /* TOP BAR */
         .top-bar {
-            background: var(--primary);
-            color: rgba(255,255,255,0.9);
-            font-size: 0.85rem;
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            z-index: 1002;
-            position: relative;
+            background: var(--primary); color: rgba(255,255,255,0.9);
+            font-size: 0.85rem; padding: 8px 5%;
+            display: flex; justify-content: space-between; align-items: center; gap: 15px;
+            z-index: 1002; position: relative;
         }
         .top-bar a { color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.3s; }
         .top-bar a:hover { color: var(--secondary-light); }
         .top-bar-group { display: flex; align-items: center; gap: 20px; }
         .top-item { display: flex; align-items: center; gap: 6px; }
 
-        /* SECTION 2: NAV BAR */
+        /* NAV BAR */
         nav {
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(12px);
-            padding: 0 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 1001;
-            transition: box-shadow 0.3s;
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(12px);
+            padding: 0 5%; display: flex; justify-content: space-between; align-items: center;
+            height: 72px; box-shadow: var(--shadow-sm); position: sticky; top: 0;
+            z-index: 1001; transition: box-shadow 0.3s;
         }
         nav.scrolled { box-shadow: var(--shadow-md); }
-
         .logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-img {
-            width: 48px; height: 48px; border-radius: 8px; 
-            object-fit: contain; flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+        .logo-img { width: 48px; height: 48px; border-radius: 8px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
         .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
         .logo-text .ar { font-weight: 800; font-size: 1.1rem; color: var(--primary); }
         .logo-text .en { font-weight: 400; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.5px; }
-
         .nav-links { display: flex; align-items: center; gap: 10px; list-style: none; }
-        .nav-links a {
-            text-decoration: none; color: var(--text); font-weight: 500;
-            font-size: 0.95rem; padding: 8px 16px; border-radius: var(--radius-sm);
-            transition: all 0.3s; position: relative;
-        }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.95rem; padding: 8px 16px; border-radius: var(--radius-sm); transition: all 0.3s; }
         .nav-links a:hover { color: var(--primary); background: rgba(0,40,85,0.06); }
         .nav-links a.active { color: var(--primary); font-weight: 700; background: rgba(0,40,85,0.08); }
-        .nav-cta {
-            background: var(--secondary) !important; color: white !important;
-            font-weight: 700 !important; padding: 10px 24px !important;
-            border-radius: 50px !important;
-            box-shadow: 0 4px 12px rgba(255,98,0,0.3);
-            transition: all 0.3s;
-        }
-        .nav-cta:hover { background: var(--secondary-light) !important; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255,98,0,0.4) !important; }
+        .nav-cta { background: var(--secondary) !important; color: white !important; font-weight: 700 !important; padding: 10px 20px !important; border-radius: 50px !important; box-shadow: 0 4px 14px rgba(255,98,0,0.3); }
+        .nav-cta:hover { background: var(--secondary-light) !important; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,98,0,0.35) !important; }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--primary); cursor: pointer; padding: 8px; z-index: 1003; }
 
-        .mobile-toggle { display: none; background: none; border: none; font-size: 1.6rem; color: var(--primary); cursor: pointer; padding: 8px; z-index: 1003; }
-
-        /* SECTION 3: HERO */
-        .hero {
-            position: relative; min-height: 90vh;
-            display: flex; align-items: center; overflow: hidden;
-        }
+        /* HERO */
+        .hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; }
         .hero-bg {
             position: absolute; inset: 0;
-            background: url('/images/hero-ac.jpg') center/cover no-repeat;
+            /* ✅ CHANGED TO gallery-workers.jpg */
+            background: url('/images/gallery-workers.jpg') center/cover no-repeat;
+            background-color: var(--primary); /* Fallback color for speed */
             z-index: 1;
         }
-        .hero-bg::after {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(0,40,85,0.92) 0%, rgba(0,80,120,0.80) 100%);
-        }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,85,0.92) 0%, rgba(0,80,120,0.80) 100%); }
         .hero-canvas { position: absolute; inset: 0; pointer-events: auto; z-index: 2; cursor: crosshair; }
-        
-        .hero-content {
-            position: relative; z-index: 3; color: white;
-            max-width: 850px; padding: 60px 5%;
-        }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
-            backdrop-filter: blur(8px); padding: 8px 20px; border-radius: 50px;
-            font-size: 0.9rem; margin-bottom: 24px; animation: fadeSlideDown 0.8s ease-out;
-        }
-        .hero-badge .dot {
-            width: 8px; height: 8px; background: var(--whatsapp);
-            border-radius: 50%; animation: pulse 2s infinite;
-        }
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
-            line-height: 1.3; margin-bottom: 20px;
-            animation: fadeSlideDown 0.8s ease-out 0.15s both;
-        }
+        .hero-content { position: relative; z-index: 3; color: white; max-width: 850px; padding: 60px 5%; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(8px); padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-bottom: 24px; animation: fadeSlideDown 0.8s ease-out; }
+        .hero-badge .dot { width: 8px; height: 8px; background: var(--whatsapp); border-radius: 50%; animation: pulse 2s infinite; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.3; margin-bottom: 20px; animation: fadeSlideDown 0.8s ease-out 0.15s both; }
         .hero h1 span { color: var(--secondary-light); }
-        .hero-desc {
-            font-size: 1.15rem; opacity: 0.9; margin-bottom: 36px;
-            max-width: 600px; animation: fadeSlideDown 0.8s ease-out 0.3s both;
-        }
-        .hero-btns {
-            display: flex; gap: 14px; flex-wrap: wrap;
-            animation: fadeSlideDown 0.8s ease-out 0.45s both;
-        }
-        .btn {
-            padding: 14px 32px; border-radius: 50px; text-decoration: none;
-            font-weight: 700; font-size: 1rem; display: inline-flex;
-            align-items: center; gap: 8px; transition: all 0.3s;
-            cursor: pointer; border: none; font-family: 'Tajawal', sans-serif;
-        }
+        .hero-desc { font-size: 1.15rem; opacity: 0.9; margin-bottom: 36px; max-width: 600px; animation: fadeSlideDown 0.8s ease-out 0.3s both; }
+        .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeSlideDown 0.8s ease-out 0.45s both; }
+        .btn { padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; cursor: pointer; border: none; font-family: 'Tajawal', sans-serif; }
         .btn-primary { background: var(--secondary); color: white; box-shadow: 0 6px 20px rgba(255,98,0,0.3); }
         .btn-primary:hover { background: var(--secondary-light); transform: translateY(-2px); }
         .btn-whatsapp { background: var(--whatsapp); color: white; box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
         .btn-whatsapp:hover { background: #20BD5A; transform: translateY(-2px); }
         .btn-outline { background: rgba(255,255,255,0.08); color: white; border: 2px solid rgba(255,255,255,0.3); }
         .btn-outline:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
-
-        .hero-stats {
-            display: flex; gap: 40px; margin-top: 50px;
-            animation: fadeSlideDown 0.8s ease-out 0.6s both; flex-wrap: wrap;
-        }
+        .hero-stats { display: flex; gap: 40px; margin-top: 50px; animation: fadeSlideDown 0.8s ease-out 0.6s both; flex-wrap: wrap; }
         .stat-item { text-align: center; color: white; }
         .stat-num { font-size: 2.2rem; font-weight: 900; line-height: 1; color: var(--gold); }
         .stat-label { font-size: 0.85rem; opacity: 0.7; margin-top: 4px; }
 
-        /* SECTION 4: SERVICES */
+        /* SERVICES */
         .services-section { padding: 100px 5%; }
         .section-header { text-align: center; margin-bottom: 60px; }
-        .section-label {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(0,40,85,0.08); color: var(--primary);
-            font-weight: 700; font-size: 0.85rem; padding: 6px 20px; border-radius: 50px; margin-bottom: 12px;
-        }
+        .section-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,40,85,0.08); color: var(--primary); font-weight: 700; font-size: 0.85rem; padding: 6px 20px; border-radius: 50px; margin-bottom: 12px; }
         .section-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: var(--primary); line-height: 1.3; }
-        
         .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .service-card {
-            background: var(--card); border-radius: var(--radius);
-            padding: 30px; box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border); transition: all 0.4s;
-            position: relative; overflow: hidden;
-        }
-        .service-card::before {
-            content: ''; position: absolute; top: 0; right: 0;
-            width: 4px; height: 0; background: var(--secondary);
-            transition: height 0.4s;
-        }
+        .service-card { background: var(--card); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); transition: all 0.4s; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; right: 0; width: 4px; height: 0; background: var(--secondary); transition: height 0.4s; }
         .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: transparent; }
         .service-card:hover::before { height: 100%; }
-
-        .service-icon {
-            width: 60px; height: 60px; border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; margin-bottom: 20px;
-            background: linear-gradient(135deg, #E0F2FE, #BAE6FD); color: #0369A1;
-            box-shadow: 0 4px 12px rgba(3, 105, 161, 0.15);
-        }
+        .service-icon { width: 60px; height: 60px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px; background: linear-gradient(135deg, #E0F2FE, #BAE6FD); color: #0369A1; box-shadow: 0 4px 12px rgba(3, 105, 161, 0.15); }
         .service-card:nth-child(2) .service-icon { background: linear-gradient(135deg, #FCE7F3, #FBCFE8); color: #BE185D; }
         .service-card:nth-child(3) .service-icon { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); color: #047857; }
         .service-card:nth-child(4) .service-icon { background: linear-gradient(135deg, #FEF3C7, #FDE68A); color: #B45309; }
-
         .service-card h3 { font-size: 1.4rem; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
         .service-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; line-height: 1.6; }
         .service-list { list-style: none; }
-        .service-list li { 
-            padding: 6px 0; color: var(--text-muted); font-size: 0.95rem; 
-            display: flex; align-items: center; gap: 10px; 
-        }
+        .service-list li { padding: 6px 0; color: var(--text-muted); font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
         .service-list li i { color: var(--secondary); font-size: 0.7rem; }
 
-        /* SECTION 5: WHY US */
-        .why-section {
-            padding: 100px 5%; background: var(--primary);
-            position: relative; overflow: hidden;
-        }
+        /* WHY US */
+        .why-section { padding: 100px 5%; background: var(--primary); position: relative; overflow: hidden; }
         .why-section .section-title { color: white; }
         .why-section .section-label { background: rgba(255,255,255,0.1); color: white; }
-        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; z-index: 1; }
-        .why-card {
-            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: var(--radius); padding: 30px 20px; text-align: center;
-            transition: all 0.4s; backdrop-filter: blur(4px);
-        }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; position: relative; z-index: 1; }
+        .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 40px 30px; text-align: center; transition: all 0.4s; backdrop-filter: blur(4px); }
         .why-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
-        .why-icon {
-            width: 60px; height: 60px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 1.4rem; margin: 0 auto 20px;
-            box-shadow: 0 4px 16px rgba(255,98,0,0.3);
-        }
-        .why-card h4 { color: white; font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; }
-        .why-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; }
+        .why-icon { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--secondary-light)); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(255,98,0,0.3); }
+        .why-card h4 { color: white; font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
+        .why-card p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
 
-        /* SECTION 6: PROCESS */
+        /* PROCESS */
         .process-section { padding: 100px 5%; background: var(--bg); }
-        .process-steps {
-            display: flex; justify-content: space-between; align-items: center; position: relative;
-            margin-top: 40px; flex-wrap: wrap;
-        }
-        .process-line {
-            position: absolute; top: 40px; left: 50px; right: 50px;
-            height: 2px; background: var(--border); z-index: 0;
-        }
-        .step {
-            position: relative; z-index: 1;
-            text-align: center; flex: 1; min-width: 200px;
-            display: flex; flex-direction: column; align-items: center;
-        }
-        .step-circle {
-            width: 80px; height: 80px; background: white; border: 4px solid var(--secondary);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; color: var(--primary); margin-bottom: 20px;
-            box-shadow: var(--shadow-md);
-        }
+        .process-steps { display: flex; justify-content: space-between; align-items: center; position: relative; margin-top: 40px; flex-wrap: wrap; gap: 30px; }
+        .process-line { position: absolute; top: 40px; left: 50px; right: 50px; height: 2px; background: var(--border); z-index: 0; }
+        .step { position: relative; z-index: 1; text-align: center; flex: 1; min-width: 200px; display: flex; flex-direction: column; align-items: center; }
+        .step-circle { width: 80px; height: 80px; background: white; border: 4px solid var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; box-shadow: var(--shadow-md); }
         .step h4 { font-size: 1.1rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
         .step p { font-size: 0.9rem; color: var(--text-muted); }
 
-        /* SECTION 7: TESTIMONIALS */
+        /* TESTIMONIALS */
         .testimonials-section { padding: 100px 5%; background: var(--bg-alt); }
-        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .testimonial-card {
-            background: var(--card); border-radius: var(--radius); padding: 30px;
-            box-shadow: var(--shadow-sm); border: 1px solid var(--border);
-        }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .testimonial-card { background: var(--card); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
         .t-icon { font-size: 2rem; color: var(--accent); opacity: 0.2; margin-bottom: 15px; }
         .t-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; font-style: italic; margin-bottom: 20px; }
         .t-author { font-weight: 800; color: var(--primary); font-size: 1rem; }
         .t-role { font-size: 0.8rem; color: var(--text-muted); }
 
-        /* SECTION 8: CONTACT */
-        .contact-section { padding: 100px 5%; background: var(--bg-alt); }
-        .contact-wrapper {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-            background: var(--card); border-radius: 20px; overflow: hidden;
-            box-shadow: var(--shadow-lg); border: 1px solid var(--border);
-        }
-        .contact-info-side {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white; padding: 60px 40px;
-            display: flex; flex-direction: column; justify-content: center;
-        }
-        .contact-logo { width: 80px; margin-bottom: 20px; }
-        .contact-info-side h3 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; }
-        .contact-info-side p { opacity: 0.8; margin-bottom: 40px; font-size: 1rem; }
-        .info-row { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 1rem; }
-        .info-row i { width: 40px; height: 40px; background: rgba(255,255,255,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        /* ✅ NEW: CONTACT FORM (Exact match from index.html) */
+        .contact-section { padding: 90px 5%; background: var(--bg); }
+        .contact-card-modern { background: var(--card); border-radius: 24px; box-shadow: var(--shadow-xl); overflow: hidden; max-width: 700px; margin: 0 auto; border: 1px solid var(--border); }
+        .contact-header-design { background: linear-gradient(135deg, var(--primary), var(--primary-light)); padding: 40px; text-align: center; color: white; }
+        .contact-header-design h2 { font-size: 1.8rem; margin-bottom: 10px; }
+        .contact-header-design p { opacity: 0.9; margin: 0; }
+        .contact-form-body { padding: 40px; }
+        .form-group-modern { position: relative; margin-bottom: 24px; }
+        .form-group-modern label { display: block; margin-bottom: 8px; color: var(--primary); font-weight: 700; font-size: 0.95rem; }
+        .input-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: var(--secondary-light); font-size: 1.1rem; }
+        .modern-input { width: 100%; padding: 16px 40px 16px 16px; border: 2px solid var(--border); border-radius: var(--radius); font-family: 'Tajawal', sans-serif; font-size: 1rem; color: var(--text); background: #FAFAFA; transition: all 0.3s; outline: none; }
+        .modern-input:focus { border-color: var(--accent); background: white; box-shadow: 0 0 0 4px rgba(0,180,216,0.1); transform: translateY(-2px); }
+        .form-row-modern { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .btn-submit-modern { width: 100%; padding: 18px; border-radius: 50px; font-family: 'Tajawal', sans-serif; font-size: 1.1rem; font-weight: 800; cursor: pointer; transition: all 0.3s; background: linear-gradient(135deg, var(--secondary), var(--secondary-light)); color: white; border: none; margin-top: 10px; box-shadow: 0 8px 25px rgba(255,98,0,0.3); }
+        .btn-submit-modern:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(255,98,0,0.4); filter: brightness(1.1); }
 
-        .contact-form-side { padding: 60px 40px; }
-        .form-group { margin-bottom: 20px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group label { display: block; font-weight: 700; color: var(--text); margin-bottom: 8px; font-size: 0.95rem; }
-        .form-control {
-            width: 100%; padding: 14px 16px; border: 2px solid var(--border);
-            border-radius: var(--radius-sm); font-family: 'Tajawal', sans-serif;
-            font-size: 1rem; color: var(--text); background: var(--bg);
-            transition: all 0.3s; outline: none;
-        }
-        .form-control:focus { border-color: var(--accent); background: white; box-shadow: 0 0 0 4px rgba(0,180,216,0.1); }
-        .btn-submit {
-            width: 100%; padding: 16px; background: var(--secondary); color: white;
-            border: none; border-radius: var(--radius-sm); font-family: 'Tajawal', sans-serif;
-            font-size: 1.1rem; font-weight: 800; cursor: pointer; transition: all 0.3s;
-            box-shadow: 0 4px 14px rgba(255,98,0,0.3); margin-top: 10px;
-        }
-        .btn-submit:hover { background: var(--secondary-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,98,0,0.4); }
-
-        /* SECTION 9: FOOTER */
+        /* FOOTER */
         footer { background: #001A3A; color: rgba(255,255,255,0.7); padding: 80px 5% 30px; }
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
         .footer-col h4 { color: white; font-weight: 700; margin-bottom: 20px; font-size: 1.1rem; }
         .footer-col ul { list-style: none; }
         .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul a {
-            color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.95rem;
-            transition: all 0.3s; display: flex; align-items: center; gap: 8px;
-        }
+        .footer-col ul a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.95rem; transition: all 0.3s; display: flex; align-items: center; gap: 8px; }
         .footer-col ul a:hover { color: var(--secondary-light); padding-right: 5px; }
         .footer-logo { width: 50px; margin-bottom: 15px; }
         .footer-social { display: flex; gap: 12px; margin-top: 20px; }
-        .footer-social a {
-            width: 40px; height: 40px; border-radius: 8px;
-            background: rgba(255,255,255,0.1); display: flex;
-            align-items: center; justify-content: center;
-            color: white; font-size: 1rem; transition: all 0.3s;
-        }
+        .footer-social a { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; transition: all 0.3s; text-decoration: none; }
         .footer-social a:hover { background: var(--secondary); transform: translateY(-3px); }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;
-            text-align: center; font-size: 0.9rem;
-        }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; text-align: center; font-size: 0.9rem; }
 
         /* UTILS */
-        .wa-float {
-            position: fixed; bottom: 30px; left: 30px; z-index: 9999;
-            width: 60px; height: 60px; background: var(--whatsapp);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 1.8rem; box-shadow: 0 6px 24px rgba(37,211,102,0.4);
-            transition: all 0.3s; text-decoration: none; animation: floatBounce 3s ease-in-out infinite;
-        }
+        .wa-float { position: fixed; bottom: 30px; left: 30px; z-index: 9999; width: 60px; height: 60px; background: var(--whatsapp); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; box-shadow: 0 6px 24px rgba(37,211,102,0.4); transition: all 0.3s; text-decoration: none; animation: floatBounce 3s ease-in-out infinite; }
         .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
-
-        .toast {
-            position: fixed; top: 100px; left: 50%; transform: translateX(-50%) translateY(-20px);
-            background: var(--primary); color: white; padding: 14px 30px;
-            border-radius: 50px; font-weight: 700; font-size: 1rem;
-            box-shadow: var(--shadow-xl); z-index: 10000; opacity: 0;
-            pointer-events: none; transition: all 0.4s; display: flex; align-items: center; gap: 10px;
-        }
+        .toast { position: fixed; top: 100px; left: 50%; transform: translateX(-50%) translateY(-20px); background: var(--primary); color: white; padding: 16px 32px; border-radius: 50px; font-weight: 700; font-size: 1rem; box-shadow: var(--shadow-xl); z-index: 10000; opacity: 0; pointer-events: none; transition: all 0.4s var(--ease-out); display: flex; align-items: center; gap: 12px; }
         .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
 
-        /* KEYFRAMES */
         @keyframes fadeSlideDown { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
         @keyframes floatBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-        /* MEDIA QUERIES */
         @media (max-width: 1024px) {
             .services-grid { grid-template-columns: 1fr; }
-            .why-grid { grid-template-columns: repeat(2, 1fr); }
-            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
             .top-bar { display: none; }
-            .nav-links {
-                display: none; position: absolute; top: 80px; right: 0; left: 0;
-                background: white; flex-direction: column; padding: 20px 5%;
-                box-shadow: var(--shadow-lg); border-top: 1px solid var(--border); gap: 5px;
-            }
+            .nav-links { display: none; position: absolute; top: 72px; right: 0; left: 0; background: white; flex-direction: column; padding: 20px 5%; box-shadow: var(--shadow-lg); border-top: 1px solid var(--border); gap: 5px; }
             .nav-links.open { display: flex; }
             .mobile-toggle { display: block; }
-            .services-grid, .why-grid, .testimonials-grid { grid-template-columns: 1fr; }
-            .contact-wrapper { grid-template-columns: 1fr; }
+            .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
             .process-steps { flex-direction: column; gap: 40px; }
             .process-line { display: none; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-social { justify-content: center; }
-            .form-row { grid-template-columns: 1fr; }
-            .hero-btns { flex-direction: column; align-items: flex-start; }
-            .btn { width: 100%; max-width: 350px; justify-content: center; }
-            .hero-stats { gap: 20px; justify-content: center; }
+            .form-row-modern { grid-template-columns: 1fr; }
+            .hero-btns { flex-direction: column; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
+            .contact-card-modern { margin: 0 16px; border-radius: 16px; }
+            .contact-form-body { padding: 24px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NRR736C"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NRR736C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span>تم استلام طلبك بنجاح!</span></div>
-    <a href="https://wa.me/966551895625" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg">تم إرسال الطلب بنجاح</span></div>
+    <a href="https://wa.me/966551895625" class="wa-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
 
-    <!-- SECTION 1: TOP BAR -->
     <div class="top-bar">
         <div class="top-bar-group">
             <div class="top-item"><i class="fas fa-phone-alt"></i> <a href="tel:+966551895625" dir="ltr">+966 55 189 5625</a></div>
@@ -458,10 +286,8 @@
         </div>
     </div>
 
-    <!-- SECTION 2: NAV BAR -->
     <nav id="navbar">
         <a href="index.html" class="logo-group">
-            <!-- ✅ UPDATED: Using Local Logo -->
             <img src="/images/logo.png" alt="Swift Home Fix Logo" class="logo-img">
             <div class="logo-text">
                 <span class="ar">التكييف والسباكة والكهرباء</span>
@@ -478,13 +304,12 @@
         <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
     </nav>
 
-    <!-- SECTION 3: HERO -->
     <header class="hero">
         <div class="hero-bg"></div>
         <canvas class="hero-canvas" id="heroCanvas"></canvas>
         <div class="hero-content">
             <div class="hero-badge"><span class="dot"></span> فنيو التكييف جاهزون الآن</div>
-            <h1>صيانة وتركيب التكييف في Riyadh<br><span style='color: #FF8A3D'>خلال 60 دقيقة ✓</span></h1>
+            <h1>صيانة وتركيب التكييف في الرياض<br><span style='color: #FF8A3D'>خلال 60 دقيقة ✓</span></h1>
             <p class="hero-desc">خدمة تكييف احترافية — تركيب، غسيل، تعبئة غاز، وإصلاح أعطال. فنيون مرخصون بخبرة 10 سنوات مع ضمان مكتوب على جميع الأعمال.</p>
             <div class="hero-btns">
                 <a href="tel:+966551895625" class="btn btn-primary"><i class="fas fa-phone-alt"></i> اتصل الآن</a>
@@ -500,14 +325,12 @@
         </div>
     </header>
 
-    <!-- SECTION 4: AC SERVICES -->
     <section class="services-section" id="services">
         <div class="section-header reveal">
             <div class="section-label"><i class="fas fa-tools"></i> ماذا نقدم</div>
             <h2 class="section-title">خدمات التكييف الشاملة</h2>
         </div>
         <div class="services-grid stagger-grid">
-            <!-- Card 1 -->
             <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-tools"></i></div>
                 <h3>تركيب وفك المكيفات</h3>
@@ -520,7 +343,6 @@
                     <li><i class="fas fa-check"></i> ضمان على التركيب</li>
                 </ul>
             </div>
-            <!-- Card 2 -->
             <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-soap"></i></div>
                 <h3>غسيل وتنظيف المكيفات</h3>
@@ -533,7 +355,6 @@
                     <li><i class="fas fa-check"></i> شهادة فحص مجانية</li>
                 </ul>
             </div>
-            <!-- Card 3 -->
             <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-wind"></i></div>
                 <h3>تعبئة غاز الفريون</h3>
@@ -546,7 +367,6 @@
                     <li><i class="fas fa-check"></i> أسعار شفافة</li>
                 </ul>
             </div>
-            <!-- Card 4 -->
             <div class="service-card reveal">
                 <div class="service-icon"><i class="fas fa-screwdriver-wrench"></i></div>
                 <h3>إصلاح أعطال التكييف</h3>
@@ -562,37 +382,19 @@
         </div>
     </section>
 
-    <!-- SECTION 5: WHY US -->
     <section class="why-section" id="why-us">
         <div class="section-header reveal">
             <div class="section-label"><i class="fas fa-star"></i> لماذا تختارنا؟</div>
             <h2 class="section-title">الخيار الأفضل للتكييف</h2>
         </div>
         <div class="why-grid stagger-grid">
-            <div class="why-card reveal">
-                <div class="why-icon"><i class="fas fa-rocket"></i></div>
-                <h4>وصول خلال 60 دقيقة</h4>
-                <p>نغطي جميع أحياء الرياض. وقتك ثمين ولا نضيّعه.</p>
-            </div>
-            <div class="why-card reveal">
-                <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
-                <h4>قطع غيار أصلية 100%</h4>
-                <p>نستخدم فقط قطع معتمدة من الشركات الأصلية.</p>
-            </div>
-            <div class="why-card reveal">
-                <div class="why-icon"><i class="fas fa-file-contract"></i></div>
-                <h4>ضمان مكتوب</h4>
-                <p>ضمان شامل على كل عمل وإصلاح نقوم به.</p>
-            </div>
-            <div class="why-card reveal">
-                <div class="why-icon"><i class="fas fa-star"></i></div>
-                <h4>فنيون معتمدون</h4>
-                <p>فريق مدرّب ومرخّص بخبرة 10 سنوات في صيانة التكييف.</p>
-            </div>
+            <div class="why-card reveal"><div class="why-icon"><i class="fas fa-rocket"></i></div><h4>وصول خلال 60 دقيقة</h4><p>نغطي جميع أحياء الرياض. وقتك ثمين ولا نضيّعه.</p></div>
+            <div class="why-card reveal"><div class="why-icon"><i class="fas fa-shield-alt"></i></div><h4>قطع غيار أصلية 100%</h4><p>نستخدم فقط قطع معتمدة من الشركات الأصلية.</p></div>
+            <div class="why-card reveal"><div class="why-icon"><i class="fas fa-file-contract"></i></div><h4>ضمان مكتوب</h4><p>ضمان شامل على كل عمل وإصلاح نقوم به.</p></div>
+            <div class="why-card reveal"><div class="why-icon"><i class="fas fa-star"></i></div><h4>فنيون معتمدون</h4><p>فريق مدرّب ومرخّص بخبرة 10 سنوات في صيانة التكييف.</p></div>
         </div>
     </section>
 
-    <!-- SECTION 6: PROCESS -->
     <section class="process-section" id="process">
         <div class="section-header reveal">
             <div class="section-label"><i class="fas fa-cogs"></i> سهولة</div>
@@ -600,369 +402,223 @@
         </div>
         <div class="process-steps reveal">
             <div class="process-line"></div>
-            <div class="step">
-                <div class="step-circle"><i class="fas fa-phone-volume"></i></div>
-                <h4>اتصل أو واتساب</h4>
-                <p>تواصل معنا في أي وقت</p>
-            </div>
-            <div class="step">
-                <div class="step-circle"><i class="fas fa-search"></i></div>
-                <h4>تشخيص مجاني</h4>
-                <p>فحص دقيق للمشكلة</p>
-            </div>
-            <div class="step">
-                <div class="step-circle"><i class="fas fa-tools"></i></div>
-                <h4>إصلاح فوري</h4>
-                <p>حل المشكلة بنفس اليوم</p>
-            </div>
-            <div class="step">
-                <div class="step-circle"><i class="fas fa-check-double"></i></div>
-                <h4>ضمان مكتوب</h4>
-                <p>راحة بال تامة لك</p>
-            </div>
+            <div class="step"><div class="step-circle"><i class="fas fa-phone-volume"></i></div><h4>اتصل أو واتساب</h4><p>تواصل معنا في أي وقت</p></div>
+            <div class="step"><div class="step-circle"><i class="fas fa-search"></i></div><h4>تشخيص مجاني</h4><p>فحص دقيق للمشكلة</p></div>
+            <div class="step"><div class="step-circle"><i class="fas fa-tools"></i></div><h4>إصلاح فوري</h4><p>حل المشكلة بنفس اليوم</p></div>
+            <div class="step"><div class="step-circle"><i class="fas fa-check-double"></i></div><h4>ضمان مكتوب</h4><p>راحة بال تامة لك</p></div>
         </div>
     </section>
 
-    <!-- SECTION 7: TESTIMONIALS -->
     <section class="testimonials-section" id="testimonials">
         <div class="section-header reveal">
             <div class="section-label"><i class="fas fa-users"></i> رأي العملاء</div>
             <h2 class="section-title">ماذا يقولون عنا؟</h2>
         </div>
         <div class="testimonials-grid stagger-grid">
-            <div class="testimonial-card reveal">
-                <i class="fas fa-quote-right t-icon"></i>
-                <p class="t-text">"المكيف كان يفصل باستمرار. الفني شخّص المشكلة في 10 دقائق وأصلح الكمبروسور. الآن يعمل بشكل مثالي!"</p>
-                <div class="t-author">سعود المطيري</div>
-                <div class="t-role">حي العليا</div>
-            </div>
-            <div class="testimonial-card reveal">
-                <i class="fas fa-quote-right t-icon"></i>
-                <p class="t-text">"خدمة غسيل ممتازة! المكيف يبرد أقوى بكثير والكهرباء انخفضت. سأتصل بهم كل سنة."</p>
-                <div class="t-author">نورة العسيري</div>
-                <div class="t-role">حي الياسمين</div>
-            </div>
-            <div class="testimonial-card reveal">
-                <i class="fas fa-quote-right t-icon"></i>
-                <p class="t-text">"ركّبوا مكيف سبليت جديد في نفس اليوم. التركيب نظيف وأنيق ولم يتركوا أي فوضى."</p>
-                <div class="t-author">خالد الغامدي</div>
-                <div class="t-role">حي الملز</div>
-            </div>
+            <div class="testimonial-card reveal"><i class="fas fa-quote-right t-icon"></i><p class="t-text">"المكيف كان يفصل باستمرار. الفني شخّص المشكلة في 10 دقائق وأصلح الكمبروسور. الآن يعمل بشكل مثالي!"</p><div class="t-author">سعود المطيري</div><div class="t-role">حي العليا</div></div>
+            <div class="testimonial-card reveal"><i class="fas fa-quote-right t-icon"></i><p class="t-text">"خدمة غسيل ممتازة! المكيف يبرد أقوى بكثير والكهرباء انخفضت. سأتصل بهم كل سنة."</p><div class="t-author">نورة العسيري</div><div class="t-role">حي الياسمين</div></div>
+            <div class="testimonial-card reveal"><i class="fas fa-quote-right t-icon"></i><p class="t-text">"ركّبوا مكيف سبليت جديد في نفس اليوم. التركيب نظيف وأنيق ولم يتركوا أي فوضى."</p><div class="t-author">خالد الغامدي</div><div class="t-role">حي الملز</div></div>
         </div>
     </section>
 
-    <!-- SECTION 8: CONTACT -->
+    <!-- ✅ NEW: EXACT FORM DESIGN FROM INDEX.HTML -->
     <section class="contact-section" id="contact">
         <div class="section-header reveal">
             <div class="section-label"><i class="fas fa-paper-plane"></i> تواصل معنا</div>
             <h2 class="section-title">احجز خدمة التكييف الآن</h2>
         </div>
-        <div class="contact-wrapper reveal">
-            <div class="contact-info-side">
-                <!-- ✅ UPDATED: Using Local Logo -->
-                <img src="/images/logo.png" alt="Logo" class="contact-logo">
-                <h3>فريقنا جاهز على مدار الساعة</h3>
-                <p>لا تتردد، نحن هنا لحل مشاكلك بأسرع وقت ممكن وبأعلى معايير الجودة.</p>
-                <div class="info-row"><i class="fas fa-phone-alt"></i> +966 55 189 5625</div>
-                <div class="info-row"><i class="fab fa-whatsapp"></i> +966 55 189 5625</div>
-                <div class="info-row"><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</div>
-                <div class="info-row"><i class="fas fa-clock"></i> 24 ساعة / 7 أيام</div>
+        
+        <div class="contact-card-modern reveal">
+            <div class="contact-header-design">
+                <h2>أرسل طلبك</h2>
+                <p>سنرد عليك في أسرع وقت ممكن</p>
             </div>
-            <div class="contact-form-side">
-                <h3>أرسل طلبك</h3>
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>الاسم الأول</label>
-                            <input type="text" class="form-control" placeholder="عبدالله" required>
+            <div class="contact-form-body">
+                <form id="contactForm" novalidate>
+                    <div class="form-group-modern">
+                        <label for="fname">الاسم الأول</label>
+                        <input type="text" id="fname" name="fname" placeholder="عبدالله" required class="modern-input">
+                        <i class="fas fa-user input-icon"></i>
+                    </div>
+                    
+                    <div class="form-group-modern">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" dir="ltr" required class="modern-input">
+                        <i class="fas fa-phone-alt input-icon"></i>
+                    </div>
+                    
+                    <div class="form-row-modern">
+                        <div class="form-group-modern">
+                            <label for="service">نوع خدمة التكييف</label>
+                            <select id="service" name="service" required class="modern-input">
+                                <option value="" disabled selected>اختر الخدمة</option>
+                                <option value="ac-install">تركيب مكيف</option>
+                                <option value="ac-clean">غسيل وتنظيف</option>
+                                <option value="ac-gas">تعبئة غاز</option>
+                                <option value="ac-repair">إصلاح عطل</option>
+                                <option value="ac-other">أخرى</option>
+                            </select>
+                            <i class="fas fa-chevron-down input-icon"></i>
                         </div>
-                        <div class="form-group">
-                            <label>الاسم الأخير</label>
-                            <input type="text" class="form-control" placeholder="الشمري">
+                        <div class="form-group-modern">
+                            <label for="lname">اسم العائلة (اختياري)</label>
+                            <input type="text" id="lname" placeholder="الشمري" class="modern-input">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>رقم الهاتف</label>
-                        <input type="tel" class="form-control" placeholder="05XXXXXXXX" dir="ltr" required>
+
+                    <div class="form-group-modern">
+                        <label for="address">العنوان بالتفصيل</label>
+                        <input type="text" id="address" placeholder="الحي، الشارع، رقم المنزل" class="modern-input">
+                        <i class="fas fa-map-marker-alt input-icon"></i>
                     </div>
-                    <div class="form-group">
-                        <label>نوع خدمة التكييف</label>
-                        <select class="form-control" required>
-                            <option value="" disabled selected>اختر الخدمة</option>
-                            <option value="install">تركيب مكيف</option>
-                            <option value="clean">غسيل وتنظيف</option>
-                            <option value="gas">تعبئة غاز</option>
-                            <option value="repair">إصلاح عطل</option>
-                            <option value="other">أخرى</option>
-                        </select>
+
+                    <div class="form-group-modern">
+                        <label for="message">وصف المشكلة</label>
+                        <textarea id="message" placeholder="اشرح المشكلة باختصار..." class="modern-input" rows="4"></textarea>
+                        <i class="fas fa-comment-dots input-icon" style="top: 30px; transform: none;"></i>
                     </div>
-                    <div class="form-group">
-                        <label>العنوان</label>
-                        <input type="text" class="form-control" placeholder="الحي، الشارع...">
-                    </div>
-                    <div class="form-group">
-                        <label>صف مشكلتك أو طلبك</label>
-                        <textarea class="form-control" rows="4" placeholder="اكتب تفاصيل الطلب هنا..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">احجز الآن — نصل خلال 60 دقيقة</button>
+
+                    <button type="submit" class="btn-submit-modern">
+                        <i class="fas fa-paper-plane"></i> إرسال الطلب الآن
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 9: FOOTER -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <!-- ✅ UPDATED: Using Local Logo -->
                 <img src="/images/logo.png" alt="Logo" class="footer-logo">
                 <p style="opacity:0.8; font-size:0.95rem; line-height:1.8;">شريكك الموثوق لجميع الخدمات المنزلية في الرياض. نقدم خدمات احترافية بأعلى معايير الجودة.</p>
                 <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://wa.me/966551895625"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/966551895625" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="takeyef.html">التكييف</a></li>
-                    <li><a href="sabaka.html">السباكة</a></li>
-                    <li><a href="kahraba.html">الكهرباء</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>خدمات التكييف</h4>
-                <ul>
-                    <li><a href="#">تركيب</a></li>
-                    <li><a href="#">غسيل</a></li>
-                    <li><a href="#">تعبئة غاز</a></li>
-                    <li><a href="#">إصلاح</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>تواصل معنا</h4>
-                <ul>
-                    <li><a href="tel:+966551895625">هاتف: +966 55 189 5625</a></li>
-                    <li><a href="https://wa.me/966551895625">واتساب</a></li>
-                    <li><a href="#">الموقع: الرياض</a></li>
-                    <li><a href="#">ساعات العمل: 24/7</a></li>
-                </ul>
-            </div>
+            <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="index.html">الرئيسية</a></li><li><a href="takeyef.html">التكييف</a></li><li><a href="sabaka.html">السباكة</a></li><li><a href="kahraba.html">الكهرباء</a></li></ul></div>
+            <div class="footer-col"><h4>خدمات التكييف</h4><ul><li><a href="#">تركيب</a></li><li><a href="#">غسيل</a></li><li><a href="#">تعبئة غاز</a></li><li><a href="#">إصلاح</a></li></ul></div>
+            <div class="footer-col"><h4>تواصل معنا</h4><ul><li><a href="tel:+966551895625">هاتف: +966 55 189 5625</a></li><li><a href="https://wa.me/966551895625">واتساب</a></li><li><a href="#">الموقع: الرياض</a></li><li><a href="#">ساعات العمل: 24/7</a></li></ul></div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2025 Swift Home Fix. جميع الحقوق محفوظة.
-        </div>
+        <div class="footer-bottom">&copy; 2025 Swift Home Fix. جميع الحقوق محفوظة.</div>
     </footer>
 
     <script>
-        // --- 1. Mobile Menu & Scroll Effect ---
-        const navbar = document.getElementById('navbar');
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
         let menuOpen = false;
-
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 40) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
-        });
-
         mobileToggle.addEventListener('click', () => {
             menuOpen = !menuOpen;
             navLinks.classList.toggle('open', menuOpen);
             mobileToggle.querySelector('i').className = menuOpen ? 'fas fa-times' : 'fas fa-bars';
         });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                navLinks.classList.remove('open');
+                mobileToggle.querySelector('i').className = 'fas fa-bars';
+            });
+        });
 
-        // --- 2. Reveal & Stagger Animations ---
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+        });
+
         const revealElements = document.querySelectorAll('.reveal');
         const grids = document.querySelectorAll('.stagger-grid');
         grids.forEach(grid => {
             const items = grid.querySelectorAll('.reveal');
-            items.forEach((item, index) => {
-                item.style.transitionDelay = `${index * 100}ms`;
-            });
+            items.forEach((item, index) => { item.style.transitionDelay = `${index * 100}ms`; });
         });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         revealElements.forEach(el => observer.observe(el));
 
-        // --- 3. Counter Animation ---
         const stats = document.querySelectorAll('.stat-num[data-target]');
         const statObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = +el.getAttribute('data-target');
-                    const duration = 2000;
-                    const start = performance.now();
+                    const el = entry.target; const target = +el.getAttribute('data-target'); const duration = 2000; const start = performance.now();
                     const tick = (now) => {
-                        const progress = Math.min((now - start) / duration,1);
-                        const ease = 1 - Math.pow(1 - progress, 3);
+                        const progress = Math.min((now - start) / duration,1); const ease = 1 - Math.pow(1 - progress, 3);
                         el.textContent = Math.floor(ease * target).toLocaleString('en-US');
                         if (progress < 1) requestAnimationFrame(tick);
                         else el.textContent = target.toLocaleString('en-US') + (target === 100 ? '%' : '+');
                     };
-                    requestAnimationFrame(tick);
-                    obs.unobserve(el);
+                    requestAnimationFrame(tick); obs.unobserve(el);
                 }
             });
         }, { threshold: 0.5 });
         stats.forEach(s => statObserver.observe(s));
 
-        // --- 4. Canvas Particle Animation ---
-        const canvas = document.getElementById('heroCanvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let mouse = { x: null, y: null, radius: 150 };
-        
+        const canvas = document.getElementById('heroCanvas'); const ctx = canvas.getContext('2d');
+        let particles = []; let mouse = { x: null, y: null, radius: 150 };
         const resizeCanvas = () => {
-            canvas.width = canvas.parentElement.offsetWidth;
-            canvas.height = canvas.parentElement.offsetHeight;
-            const isMobile = window.innerWidth < 768;
-            const count = isMobile ? 30 : 80;
-            initParticles(count);
+            canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight;
+            const isMobile = window.innerWidth < 768; initParticles(isMobile ? 30 : 80);
         };
-
-        class Particle {
-            constructor() { this.reset(); }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
-            }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                // Mouse interaction
-                if (mouse.x != null) {
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx*dx + dy*dy);
-                    if (distance < mouse.radius) {
-                        const force = (mouse.radius - distance) / mouse.radius;
-                        this.x -= (dx / distance) * force * 5;
-                        this.y -= (dy / distance) * force * 5;
-                    }
-                }
-                // Wrap around
-                if (this.x < 0) this.x = canvas.width;
-                if (this.x > canvas.width) this.x = 0;
-                if (this.y < 0) this.y = canvas.height;
-                if (this.y > canvas.height) this.y = 0;
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-                ctx.fill();
-            }
-        }
-
-        const initParticles = (count) => {
-            particles = [];
-            for (let i = 0; i < count; i++) particles.push(new Particle());
-        };
-
-        const animate = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            // Draw lines
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i; j < particles.length; j++) {
-                    let dx = particles[i].x - particles[j].x;
-                    let dy = particles[i].y - particles[j].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 120) {
-                        ctx.strokeStyle = `rgba(255,255,255,${(1 - distance/120) * 0.15})`;
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(animate);
-        };
-
-        // Mouse Events
-        canvas.addEventListener('mousemove', e => {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
-        });
+        class Particle { constructor() { this.reset(); } reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5; this.size = Math.random() * 2 + 1; } update() { this.x += this.vx; this.y += this.vy; if (mouse.x != null) { let dx = mouse.x - this.x; let dy = mouse.y - this.y; let distance = Math.sqrt(dx*dx + dy*dy); if (distance < mouse.radius) { const force = (mouse.radius - distance) / mouse.radius; this.x -= (dx / distance) * force * 5; this.y -= (dy / distance) * force * 5; } } if (this.x < 0) this.x = canvas.width; if (this.x > canvas.width) this.x = 0; if (this.y < 0) this.y = canvas.height; if (this.y > canvas.height) this.y = 0; } draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; ctx.fill(); } }
+        const initParticles = (count) => { particles = []; for (let i = 0; i < count; i++) particles.push(new Particle()); };
+        const animate = () => { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); for (let i = 0; i < particles.length; i++) { for (let j = i; j < particles.length; j++) { let dx = particles[i].x - particles[j].x; let dy = particles[i].y - particles[j].y; let distance = Math.sqrt(dx * dx + dy * dy); if (distance < 120) { ctx.strokeStyle = `rgba(255,255,255,${(1 - distance/120) * 0.15})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); } } } requestAnimationFrame(animate); };
+        canvas.addEventListener('mousemove', e => { const rect = canvas.getBoundingClientRect(); mouse.x = e.clientX - rect.left; mouse.y = e.clientY - rect.top; });
         canvas.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas(); animate();
+        window.addEventListener('resize', resizeCanvas); resizeCanvas(); animate();
 
-        // --- 5. Form Handler ---
-       const form = document.getElementById('contactForm');
-const toast = document.getElementById('toast');
-
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const btn = form.querySelector('button');
-    const originalText = btn.innerText;
-    
-    // 1. Change button text to "Sending..."
-    btn.innerText = 'جاري الإرسال...';
-    btn.disabled = true;
-
-    // 2. Prepare data to send
-    const formData = {
-        name: form.querySelector('input[placeholder*="عبدالله"]').value + ' ' + form.querySelector('input[placeholder="الشمري"]').value,
-        phone: form.querySelector('input[type="tel"]').value,
-        service: form.querySelector('select').value,
-        address: form.querySelector('input[placeholder="الحي"]').value,
-        message: form.querySelector('textarea').value
-    };
-
-    try {
-        // 3. Send data to PHP file
-        const response = await fetch('api/contact.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData) 
+        // ✅ NEW: ROBUST FORM HANDLER (From index.html)
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toastMsg');
+        const showToast = (msg, dur = 3500) => { toastMsg.textContent = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), dur); };
+        
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fname = document.getElementById('fname').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const service = document.getElementById('service').value;
+            
+            if (!fname) { showToast('يرجى إدخال الاسم الأول'); document.getElementById('fname').focus(); return; }
+            if (!phone || phone.length < 10) { showToast('يرجى إدخال رقم هاتف صحيح'); document.getElementById('phone').focus(); return; }
+            if (!service) { showToast('يرجى اختيار نوع الخدمة'); document.getElementById('service').focus(); return; }
+            
+            const btn = contactForm.querySelector('.btn-submit-modern');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+            btn.disabled = true;
+            
+            try {
+                const response = await fetch('api/contact.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: fname + ' ' + document.getElementById('lname').value,
+                        phone: phone, service: service,
+                        address: document.getElementById('address').value,
+                        message: document.getElementById('message').value
+                    })
+                });
+                
+                const data = await response.json();
+                if (data.success) {
+                    btn.innerHTML = '<i class="fas fa-check"></i> تم الإرسال بنجاح';
+                    btn.style.background = 'linear-gradient(135deg, #059669, #057538)';
+                    showToast('تم استلام طلبك بنجاح! سنتواصل معك قريباً');
+                    contactForm.reset();
+                    setTimeout(() => { window.location.href = 'shukran.html'; }, 1500);
+                } else {
+                    throw new Error(data.message || 'فشل الإرسال');
+                }
+            } catch (err) {
+                console.error(err);                  
+                showToast('حدث خطأ في الاتصال، يرجى المحاولة لاحقاً.');
+                btn.innerHTML = orig;
+                btn.disabled = false;
+            }
         });
-        
-        const data = await response.json();
-        
-        // 4. If Successful...
-        if (data.success) {
-            // Show the Toast notification briefly
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2000);
-            form.reset();
-
-            // ✅ NEW: Redirect to Thank You Page after 1.5 seconds
-            setTimeout(() => {
-                window.location.href = 'shukran.html';
-            }, 1500);
-        } else {
-            // If PHP returned an error
-            alert('Error: ' + (data.message || 'Unknown error'));
-        }
-
-    } catch (err) {
-        console.error(err);
-        alert('Connection error. Please try again.');
-    }
-
-    // Reset button
-    btn.innerText = originalText;
-    btn.disabled = false;
-});
     </script>
 </body>
 </html>
