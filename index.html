@@ -16,10 +16,10 @@
     <meta name="keywords" content="سباكة الرياض، كهرباء الرياض، تكييف الرياض، صيانة منزلية، فني سباكة، كشف تسربات">
     <link rel="canonical" href="https://technicalstars.online/index.html">
 
-    <!-- ✅ FIX 1: ADDED FAVICON (Fixes the missing tab logo) -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="/images/logo.png">
 
-    <!-- ✅ OPEN GRAPH (Using Local Image) -->
+    <!-- OPEN GRAPH (Updated to new Hero Image) -->
     <meta property="og:title" content="خدمات منزلية احترافية - Swift Home Fix">
     <meta property="og:description" content="خدمة منزلية احترافية في الرياض. فنيون مرخصون ذو خبرة عالية مع ضمان شامل ووصول خلال 60 دقيقة.">
     <meta property="og:image" content="/images/gallery-wiring.jpg">
@@ -32,10 +32,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- 🚀 PRELOAD HERO IMAGE (Strictly Local) -->
+    <!-- 🚀 PRELOAD HERO IMAGE (Changed to gallery-wiring.jpg) -->
     <link rel="preload" as="image" fetchpriority="high" href="/images/gallery-wiring.jpg">
 
-    <!-- 🚀 Load Fonts & Icons Asynchronously (Non-blocking for speed) -->
+    <!-- 🚀 Load Fonts & Icons Asynchronously -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap"></noscript>
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -74,7 +74,7 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
-            overflow-x: hidden; /* Prevents horizontal scroll on mobile */
+            overflow-x: hidden;
         }
 
         .reveal {
@@ -158,8 +158,8 @@
         }
         .hero-bg {
             position: absolute; inset: 0;
-            /* ✅ 100% Local Image */
-            background: url('/images/hero-ac.jpg') center/cover no-repeat;
+            /* ✅ CHANGED TO gallery-wiring.jpg */
+            background: url('/images/gallery-wiring.jpg') center/cover no-repeat;
             background-color: var(--primary); /* Fallback color while image loads */
         }
         .hero-bg::after {
@@ -171,8 +171,7 @@
         .hero-content {
             position: relative; z-index: 3; color: white;
             max-width: 850px; 
-            /* ✅ FIX 2: REMOVED BLANK LEFT SPACE ON MOBILE */
-            /* Changed from (60px 5% 60px 8%) to (60px 5%) for perfect symmetry in RTL */
+            /* ✅ FIX: Perfect symmetry on mobile (No blank left space) */
             padding: 60px 5%; 
         }
         .hero-badge {
@@ -253,7 +252,6 @@
         .service-card-img-wrap {
             overflow: hidden; position: relative; height: 200px;
         }
-        /* ✅ 100% Local Images */
         .service-card-img {
             width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.6s var(--ease-out);
@@ -330,7 +328,6 @@
             margin-bottom: 20px;
             background: #f0f0f0;
         }
-        /* ✅ 100% Local Images */
         .project-img {
             width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.5s ease-out;
@@ -601,7 +598,6 @@
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
         .footer-brand { display: flex; flex-direction: column; gap: 4px; }
         .footer-logo-row { display: flex; align-items: center; gap: 12px; }
-        /* ✅ 100% Local Image */
         .footer-logo-img { width: 50px; height: 50px; border-radius: 8px; object-fit: contain; }
         .footer-brand .logo-text .ar-name { color: white; }
         .footer-brand .logo-text .en-name { color: rgba(255,255,255,0.4); }
@@ -718,7 +714,6 @@
 
     <nav id="navbar">
         <div class="logo-group">
-            <!-- ✅ 100% Local Image -->
             <img src="/images/logo.png" alt="شعار Swift Home Fix" class="logo-img" width="48" height="48">
             <div class="logo-text">
                 <span class="ar-name">التكييف والسباكة والكهرباء</span>
