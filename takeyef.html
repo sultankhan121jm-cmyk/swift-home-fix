@@ -19,21 +19,21 @@
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="/images/logo.png">
 
-    <!-- ✅ OPEN GRAPH (Using Local Image) -->
+    <!-- ✅ OPEN GRAPH (Updated to hero-ac.jpg) -->
     <meta property="og:title" content="صيانة وتركيب التكييف - Swift Home Fix">
     <meta property="og:description" content="خدمة تكييف احترافية في الرياض: تركيب، غسيل، تعبئة غاز، وإصلاح أعطال. فنيون مرخصون، ضمان مكتوب، وصول خلال 60 دقيقة.">
-    <meta property="og:image" content="/images/gallery-workers.jpg">
+    <meta property="og:image" content="/images/hero-ac.jpg">
     <meta property="og:url" content="https://technicalstars.online/takeyef.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
 
-    <!-- 🚀 PERFORMANCE: Preconnect & Async Loading (Like index.html) -->
+    <!-- 🚀 PERFORMANCE: Preconnect & Async Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- 🚀 PRELOAD HERO IMAGE -->
-    <link rel="preload" as="image" fetchpriority="high" href="/images/gallery-workers.jpg">
+    <!-- 🚀 PRELOAD HERO IMAGE (Changed to hero-ac.jpg) -->
+    <link rel="preload" as="image" fetchpriority="high" href="/images/hero-ac.jpg">
 
     <!-- 🚀 Load Fonts & Icons Asynchronously -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -87,32 +87,20 @@
         }
 
         .reveal {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 0; transform: translateY(30px);
             transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
             will-change: opacity, transform;
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* TOP BAR */
-        .top-bar {
-            background: var(--primary); color: rgba(255,255,255,0.9);
-            font-size: 0.85rem; padding: 8px 5%;
-            display: flex; justify-content: space-between; align-items: center; gap: 15px;
-            z-index: 1002; position: relative;
-        }
+        /* TOP BAR & NAV */
+        .top-bar { background: var(--primary); color: rgba(255,255,255,0.9); font-size: 0.85rem; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; gap: 15px; z-index: 1002; position: relative; }
         .top-bar a { color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.3s; }
         .top-bar a:hover { color: var(--secondary-light); }
         .top-bar-group { display: flex; align-items: center; gap: 20px; }
         .top-item { display: flex; align-items: center; gap: 6px; }
 
-        /* NAV BAR */
-        nav {
-            background: rgba(255,255,255,0.98); backdrop-filter: blur(12px);
-            padding: 0 5%; display: flex; justify-content: space-between; align-items: center;
-            height: 72px; box-shadow: var(--shadow-sm); position: sticky; top: 0;
-            z-index: 1001; transition: box-shadow 0.3s;
-        }
+        nav { background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); padding: 0 5%; display: flex; justify-content: space-between; align-items: center; height: 72px; box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1001; transition: box-shadow 0.3s; }
         nav.scrolled { box-shadow: var(--shadow-md); }
         .logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .logo-img { width: 48px; height: 48px; border-radius: 8px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
@@ -129,13 +117,7 @@
 
         /* HERO */
         .hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; }
-        .hero-bg {
-            position: absolute; inset: 0;
-            /* ✅ CHANGED TO gallery-workers.jpg */
-            background: url('/images/gallery-workers.jpg') center/cover no-repeat;
-            background-color: var(--primary); /* Fallback color for speed */
-            z-index: 1;
-        }
+        .hero-bg { position: absolute; inset: 0; background: url('/images/hero-ac.jpg') center/cover no-repeat; background-color: var(--primary); z-index: 1; }
         .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,40,85,0.92) 0%, rgba(0,80,120,0.80) 100%); }
         .hero-canvas { position: absolute; inset: 0; pointer-events: auto; z-index: 2; cursor: crosshair; }
         .hero-content { position: relative; z-index: 3; color: white; max-width: 850px; padding: 60px 5%; }
