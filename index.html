@@ -170,7 +170,10 @@
         
         .hero-content {
             position: relative; z-index: 3; color: white;
-            max-width: 850px; padding: 60px 5% 60px 8%;
+            max-width: 850px; 
+            /* ✅ FIX 2: REMOVED BLANK LEFT SPACE ON MOBILE */
+            /* Changed from (60px 5% 60px 8%) to (60px 5%) for perfect symmetry in RTL */
+            padding: 60px 5%; 
         }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
@@ -651,12 +654,12 @@
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
-                max-height: none; /* Changed from 500px to prevent weird scrolling */
+                max-height: none; 
                 overflow-y: visible;
                 padding-bottom: 0;
             }
             .testimonial-card {
-                flex-direction: column; /* Changed to column for better mobile text wrapping */
+                flex-direction: column; 
                 text-align: center;
             }
             .t-visual-side {
@@ -671,7 +674,7 @@
             /* Form adjustments */
             .form-row-modern { grid-template-columns: 1fr; }
             
-            /* Hero adjustments */
+            /* Hero adjustments - No blank space */
             .hero-content { padding: 40px 5%; }
             .hero-btns { flex-direction: column; width: 100%; }
             .btn { width: 100%; justify-content: center; }
