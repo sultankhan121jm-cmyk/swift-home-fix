@@ -51,7 +51,7 @@ if (!preg_match('/^(05|00966|966|009705)[0-9]{8,15}$/', $phone)) {
 }
 
 // 5. Email Configuration
- $recipient = "qazisultan121jm@gmail.com"; // <--- CHANGE THIS TO YOUR EMAIL
+ $recipient = "au612324@gmail.com"; // <--- CHANGE THIS TO YOUR EMAIL
  $subject = "طلب جديد من الموقع: " . $service; 
 
 // 6. Email Body Formatting (Text format is safer and more reliable)

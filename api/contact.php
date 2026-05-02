@@ -41,7 +41,7 @@ if (empty($name) || empty($phone) || empty($service)) {
 }
 
 // 5. Email Configuration
- $recipient = "qazisultan121jm@gmail.com"; // <--- REPLACE WITH YOUR EMAIL
+ $recipient = "au612324@gmail.com"; // <--- REPLACE WITH YOUR EMAIL
  $subject = "New Service Request: " . ucfirst($service); // e.g., "New Service Request: Ac"
 
 // Email Body Formatting
