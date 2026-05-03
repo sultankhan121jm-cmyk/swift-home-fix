@@ -2,15 +2,11 @@
 <html lang="ar" dir="rtl">
 <head>
     <!-- Google Tag Manager -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <!-- Scroll to top -->
-    <button id="scrollTopBtn" aria-label="العودة للأعلى"><i class="fas fa-chevron-up"></i></button>
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>window.addEventListener('load',function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5NRR736C');</script>
+    })(window,document,'script','dataLayer','GTM-5NRR736C');},{once:true});</script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
@@ -20,9 +16,10 @@
     <meta name="keywords" content="سباكة الرياض، كهرباء الرياض، تكييف الرياض، صيانة منزلية، فني سباكة، كشف تسربات">
     <link rel="canonical" href="https://technicalstars.online/index.html">
 
-    <!-- FAVICON -->S
-<link rel="icon" type="image/png" href="/images/logo.png">
-
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
 
     <!-- OPEN GRAPH (Updated to new Hero Image) -->
     <meta property="og:title" content="خدمات منزلية احترافية - Swift Home Fix">
@@ -34,19 +31,31 @@
 
     <!-- 🚀 PERFORMANCE: Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
     <!-- 🚀 PRELOAD HERO IMAGE (Changed to gallery-wiring.jpg) -->
     <link rel="preload" as="image" fetchpriority="high" href="/images/gallery-wiring.jpg">
 
     <!-- 🚀 Load Fonts & Icons Asynchronously -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap"></noscript>
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <style>
+        /* Critical: system font stack until Tajawal loads */
+        body { font-family: 'Tajawal', 'Segoe UI', Tahoma, Arial, sans-serif; }
+        @font-face {
+            font-family: 'Tajawal';
+            font-display: swap;
+        }
+    </style>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap&font-display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap&font-display=swap"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="all"></noscript>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"></noscript>
     <style>
         :root {
             --primary: #002855;
@@ -1280,6 +1289,40 @@
             .map-frame, #map { min-height: 320px; }
         }
 
+
+        /* ── Explicit aspect ratios prevent CLS ── */
+        .service-card-img-wrap { aspect-ratio: 16/10; overflow: hidden; }
+        .service-card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .project-img-wrapper { aspect-ratio: 3/2; overflow: hidden; }
+        .project-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hero { min-height: 100svh; }
+
+        /* ── content-visibility for below-fold sections ── */
+        .services-section,
+        .featured-section,
+        .why-section,
+        .process-section,
+        .testimonials-section,
+        .contact-section,
+        .map-section,
+        footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 600px;
+        }
+
+
+        /* Prevent forced reflow on animated elements */
+        .whatsapp-float,
+        .btn,
+        .service-card,
+        .why-card,
+        #scrollTopBtn {
+            will-change: transform;
+        }
+        /* Remove transform from elements that don't animate */
+        .hero-float-shape { will-change: transform, opacity; }
+        .map-scan-line { will-change: top, opacity; }
+
     </style>
 </head>
 <body>
@@ -1319,7 +1362,7 @@
 
     <nav id="navbar">
         <div class="logo-group">
-            <img src="/images/logo.png" alt="شعار Swift Home Fix" class="logo-img" width="48" height="48">
+            <img src="/images/logo.png" alt="شعار Swift Home Fix" class="logo-img" width="48" height="48" loading="eager" fetchpriority="low" decoding="async">
             <div class="logo-text">
                 <span class="ar-name">التكييف والسباكة والكهرباء</span>
                 <span class="en-name">SWIFT HOME FIX</span>
@@ -1429,7 +1472,7 @@
         <div class="services-grid stagger-grid">
             <a href="takeyef.html" class="service-card reveal">
                 <div class="service-card-img-wrap">
-                    <img src="/images/service-ac.jpg" alt="خدمات التكييف" class="service-card-img" loading="lazy">
+                    <img src="/images/service-ac.jpg" alt="خدمات التكييف" class="service-card-img" loading="lazy" width="600" height="380" decoding="async">
                 </div>
                 <div class="service-card-body">
                     <div class="service-icon icon-ac"><i class="fas fa-snowflake"></i></div>
@@ -1446,7 +1489,7 @@
 
             <a href="sabaka.html" class="service-card reveal">
                 <div class="service-card-img-wrap">
-                    <img src="/images/service-plumbing.jpg" alt="خدمات السباكة" class="service-card-img" loading="lazy">
+                    <img src="/images/service-plumbing.jpg" alt="خدمات السباكة" class="service-card-img" loading="lazy" width="600" height="380" decoding="async">
                 </div>
                 <div class="service-card-body">
                     <div class="service-icon icon-plumbing"><i class="fas fa-faucet-drip"></i></div>
@@ -1463,7 +1506,7 @@
 
             <a href="kahraba.html" class="service-card reveal">
                 <div class="service-card-img-wrap">
-                    <img src="/images/service-electric.jpg" alt="خدمات الكهرباء" class="service-card-img" loading="lazy">
+                    <img src="/images/service-electric.jpg" alt="خدمات الكهرباء" class="service-card-img" loading="lazy" width="600" height="380" decoding="async">
                 </div>
                 <div class="service-card-body">
                     <div class="service-icon icon-electric"><i class="fas fa-bolt"></i></div>
@@ -1489,7 +1532,7 @@
         <div class="project-grid">
             <div class="project-card reveal">
                 <div class="project-img-wrapper">
-                    <img src="/images/service-plumbing.jpg" alt="مشروع سباكة" class="project-img">
+                    <img src="/images/service-plumbing.jpg" alt="مشروع سباكة" class="project-img" loading="lazy" width="600" height="400" decoding="async">
                 </div>
                 <div class="project-content">
                     <h3>تأسلوب حمامات جديدة</h3>
@@ -1499,7 +1542,7 @@
             </div>
             <div class="project-card reveal">
                 <div class="project-img-wrapper">
-                    <img src="/images/service-ac.jpg" alt="مشروع تكييف" class="project-img">
+                    <img src="/images/service-ac.jpg" alt="مشروع تكييف" class="project-img" loading="lazy" width="600" height="400" decoding="async">
                 </div>
                 <div class="project-content">
                     <h3>تركيب مركزي (فيلا)</h3>
@@ -1509,7 +1552,7 @@
             </div>
             <div class="project-card reveal">
                 <div class="project-img-wrapper">
-                    <img src="/images/service-electric.jpg" alt="مشروع كهرباء" class="project-img">
+                    <img src="/images/service-electric.jpg" alt="مشروع كهرباء" class="project-img" loading="lazy" width="600" height="400" decoding="async">
                 </div>
                 <div class="project-content">
                     <h3>إضاءة خارجية ذكية</h3>
@@ -1828,6 +1871,8 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+
     <!-- Scroll to top -->
     <button id="scrollTopBtn" aria-label="العودة للأعلى"><i class="fas fa-chevron-up"></i></button>
 
@@ -1851,7 +1896,7 @@
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 40);
-        });
+        }, { passive: true });
 
         const sections = document.querySelectorAll('section[id]');
         const navAnchors = navLinks.querySelectorAll('a[href^="#"]');
@@ -1882,7 +1927,7 @@
                     revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
         revealEls.forEach(el => revealObserver.observe(el));
 
         const statNums = document.querySelectorAll('.stat-num[data-target]');
@@ -2010,8 +2055,21 @@
         });
         canvas.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
 
-        resizeCanvas(); initParticles(); animateParticles();
-        window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+        // Defer canvas until after page load, skip on mobile for performance
+        const isMobile = window.innerWidth < 768 || ('ontouchstart' in window);
+        if (!isMobile) {
+            const startCanvas = () => { resizeCanvas(); initParticles(); animateParticles(); };
+            if (document.readyState === 'complete') startCanvas();
+            else window.addEventListener('load', startCanvas, { once: true });
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => { resizeCanvas(); initParticles(); }, 250);
+            });
+        } else {
+            // On mobile, hide canvas to save CPU
+            if (canvas) canvas.style.display = 'none';
+        }
         
         const canvasObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -2090,7 +2148,7 @@
         scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         // ── 3D Card Tilt Effect ──
-        document.querySelectorAll('.service-card, .why-card, .project-card').forEach(card => {
+        const _initTilt = () => { document.querySelectorAll('.service-card, .why-card, .project-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const cx = rect.left + rect.width / 2;
@@ -2102,7 +2160,9 @@
             card.addEventListener('mouseleave', () => {
                 card.style.transform = '';
             });
-        });
+        }); };
+        if ('requestIdleCallback' in window) requestIdleCallback(_initTilt, { timeout: 2000 });
+        else setTimeout(_initTilt, 1000);
 
         // ── Remove duplicate scrollTopBtn if present ──
         const btns = document.querySelectorAll('#scrollTopBtn');
@@ -2110,7 +2170,7 @@
 
 
         // ── MAP INIT ──
-        (function() {
+        window.addEventListener('load', function mapInit() {
             const L = window.L;
             if (!L) return;
             const lat = 24.688944, lng = 46.831528;
@@ -2172,7 +2232,7 @@
                 });
             }, { threshold: 0.2 });
             if (mapSection) mapObserver.observe(mapSection);
-        })();
+        }, { once: true });
 
     </script>
 </body>
